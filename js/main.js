@@ -42,11 +42,16 @@
                     const isMobile = window.innerWidth < 768;
 
                     if (isMobile) {
-                        // Mobile: no pinning — always show white bg, fade content in on scroll
-                        gsap.set(bg, { clipPath: 'circle(150% at center)' });
-                        gsap.to(content, {
-                            opacity: 1, duration: 0.8, ease: 'power1.out',
-                            scrollTrigger: { trigger: section, start: 'top 85%', once: true }
+                        // Mobile: animate circle expansion on scroll-enter (NO pin)
+                        ScrollTrigger.create({
+                            trigger: section,
+                            start: 'top 70%',
+                            once: true,
+                            onEnter: function() {
+                                gsap.timeline()
+                                    .to(bg, { clipPath: 'circle(150% at center)', duration: 1.2, ease: 'power2.inOut' })
+                                    .to(content, { opacity: 1, duration: 0.6, ease: 'power1.out' }, '-=0.4');
+                            }
                         });
                     } else {
                         // Desktop: full pinned reveal animation
