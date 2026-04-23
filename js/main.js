@@ -39,6 +39,9 @@
                     const bg = document.getElementById('globe-bg');
                     const content = document.getElementById('globe-content');
 
+                    // Set initial opacity to 0 so text doesn't show before the white circle expands
+                    gsap.set(content, { opacity: 0 });
+
                     const isMobile = window.innerWidth < 768;
 
                     if (isMobile) {

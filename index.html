@@ -211,25 +211,27 @@
         </script>
 
         <link rel="stylesheet" href="css/styles.css">
-    
-    <style id="mobile-fixes">
-        /* Image comparison slider: prevent page scroll while dragging */
-        #img-comparison-wrapper {
-            touch-action: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-        /* Hero: ensure text is centered vertically on mobile */
-        @media (max-width: 767px) {
-            #intro-text-container {
-                padding-top: env(safe-area-inset-top, 0px);
+
+        <style id="mobile-fixes">
+            /* Image comparison slider: prevent page scroll while dragging */
+            #img-comparison-wrapper {
+                touch-action: none;
+                -webkit-user-select: none;
+                user-select: none;
             }
-            #hero-geometric {
-                padding-top: 2rem;
+
+            /* Hero: ensure text is centered vertically on mobile */
+            @media (max-width: 767px) {
+                #intro-text-container {
+                    padding-top: env(safe-area-inset-top, 0px);
+                }
+
+                #hero-geometric {
+                    padding-top: 2rem;
+                }
             }
-        }
-    </style>
-</head>
+        </style>
+    </head>
 
 <body class="font-body-md bg-background selection:bg-primary selection:text-on-primary">
     <!-- Custom Cursor -->
@@ -379,21 +381,21 @@
                         <!-- CTAs -->
                         <div class="gm-fade gm-d4 flex flex-col sm:flex-row gap-4">
                             <a href="#contato" class="inline-block"><button
-                                class="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-on-primary transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] active:scale-[0.98]">
-                                Fale com um especialista
-                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg>
-                            </button></a>
+                                    class="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-on-primary transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] active:scale-[0.98]">
+                                    Fale com um especialista
+                                    <svg class="w-4 h-4 transition-transform group-hover:translate-x-1"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
+                                    </svg>
+                                </button></a>
                             <a href="#horizontal-scroll-container" class="inline-block"><button
-                                class="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-colors">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                    <polygon points="5 3 19 12 5 21 5 3" />
-                                </svg>
-                                Ver Portfólio
-                            </button></a>
+                                    class="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-colors">
+                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                    Ver Portfólio
+                                </button></a>
                         </div>
                     </div>
 
@@ -584,7 +586,8 @@
 
                 <!-- Image Comparison Slider -->
                 <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-                    style="aspect-ratio: 16/9; touch-action: none; user-select: none; -webkit-user-select: none;" id="img-comparison-wrapper">
+                    style="aspect-ratio: 16/9; touch-action: none; user-select: none; -webkit-user-select: none;"
+                    id="img-comparison-wrapper">
 
                     <!-- BEFORE image (left) -->
                     <img id="img-before" src="img/antes.png" alt="Antes — site antigo"
@@ -693,11 +696,12 @@
         <section id="globe-section"
             class="relative w-full min-h-[100dvh] py-16 md:py-0 md:h-screen flex items-center justify-center overflow-visible md:overflow-hidden z-10">
             <!-- The expanding white background -->
-            <div id="globe-bg" class="absolute inset-0 bg-white globe-bg-element" style="clip-path: circle(0% at center);"></div>
+            <div id="globe-bg" class="absolute inset-0 bg-white globe-bg-element"
+                style="clip-path: circle(0% at center);"></div>
 
             <!-- Content -->
             <div id="globe-content"
-                class="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12 globe-content-wrapper">
+                class="relative z-10 opacity-0 w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12 globe-content-wrapper">
                 <div class="lg:w-5/12 text-black flex flex-col justify-center">
                     <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Alcance Global</span>
                     <h2 class="font-headline-lg text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
@@ -1137,7 +1141,8 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="timeline-item relative md:absolute md:top-[35%] md:left-[55%] md:w-[45%] opacity-0 md:pl-12">
+                    <div
+                        class="timeline-item relative md:absolute md:top-[35%] md:left-[55%] md:w-[45%] opacity-0 md:pl-12">
                         <h3
                             class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-12 pointer-events-none">
                             2020</h3>
@@ -1160,7 +1165,8 @@
                     </div>
 
                     <!-- Item 4 -->
-                    <div class="timeline-item relative md:absolute md:top-[85%] md:left-[55%] md:w-[45%] opacity-0 md:pl-12 pb-8">
+                    <div
+                        class="timeline-item relative md:absolute md:top-[85%] md:left-[55%] md:w-[45%] opacity-0 md:pl-12 pb-8">
                         <h3
                             class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-12 pointer-events-none">
                             Hoje</h3>
@@ -1181,21 +1187,11 @@
                     <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Depoimentos</span>
                     <h2 class="font-headline-lg text-headline-lg text-white">O que falam de nós</h2>
                 </div>
-                <!-- Botões de navegação do carrossel -->
-                <div class="flex gap-4">
-                    <button id="testimonial-prev"
-                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all text-white active:scale-95">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <button id="testimonial-next"
-                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all text-white active:scale-95">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
                 </div>
-            </div>
 
             <!-- Container do carrossel (scroll horizontal com snap) -->
-            <div id="testimonials-track" class="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory no-scrollbar scroll-smooth">
+            <div id="testimonials-track"
+                class="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory no-scrollbar scroll-smooth">
 
                 <!-- ================================================ -->
                 <!-- DEPOIMENTO 1                                       -->
@@ -1209,13 +1205,10 @@
                             Exemplo: src="img/gabriel.jpg"
                             Tamanho ideal: 200x200px, recortado em círculo automaticamente.
                         -->
-                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
-                            <img
-                                alt="Gabriel Henrique"
-                                class="w-full h-full object-cover"
-                                src="img/foto-pessoa-1.jpg"
-                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>G</div>'"
-                            />
+                        <div
+                            class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img alt="Gabriel Henrique" class="w-full h-full object-cover" src="img/foto-pessoa-1.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>G</div>'" />
                         </div>
                         <div>
                             <h4 class="text-sm font-bold text-white">Gabriel Henrique</h4>
@@ -1224,7 +1217,8 @@
                     </div>
                     <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
                     <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
-                        "Empresa que eu posso confiar de olhos fechados. Entregam resultados reais e com muita agilidade."
+                        "Empresa que eu posso confiar de olhos fechados. Entregam resultados reais e com muita
+                        agilidade."
                     </p>
                 </div>
 
@@ -1238,13 +1232,10 @@
                             Coloque o arquivo de imagem na pasta: img/
                             Exemplo: src="img/david.jpg"
                         -->
-                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
-                            <img
-                                alt="David Chen"
-                                class="w-full h-full object-cover"
-                                src="img/foto-pessoa-2.jpg"
-                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>D</div>'"
-                            />
+                        <div
+                            class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img alt="David Chen" class="w-full h-full object-cover" src="img/foto-pessoa-2.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>D</div>'" />
                         </div>
                         <div>
                             <h4 class="text-sm font-bold text-white">David Chen</h4>
@@ -1253,7 +1244,8 @@
                     </div>
                     <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
                     <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
-                        "Velocidade de entrega sem precedentes e qualidade impecável. O protótipo que criaram se tornou nossa principal ferramenta de captação."
+                        "Velocidade de entrega sem precedentes e qualidade impecável. O protótipo que criaram se tornou
+                        nossa principal ferramenta de captação."
                     </p>
                 </div>
 
@@ -1267,13 +1259,10 @@
                             Coloque o arquivo de imagem na pasta: img/
                             Exemplo: src="img/marcus.jpg"
                         -->
-                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
-                            <img
-                                alt="Marcus Thorne"
-                                class="w-full h-full object-cover"
-                                src="img/foto-pessoa-3.jpg"
-                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>M</div>'"
-                            />
+                        <div
+                            class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img alt="Marcus Thorne" class="w-full h-full object-cover" src="img/foto-pessoa-3.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>M</div>'" />
                         </div>
                         <div>
                             <h4 class="text-sm font-bold text-white">Marcus Thorne</h4>
@@ -1282,10 +1271,10 @@
                     </div>
                     <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
                     <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
-                        "O nível de sofisticação que trouxeram foi incrível. Eles não apenas constroem soluções — eles arquitetam o futuro do seu negócio."
+                        "O nível de sofisticação que trouxeram foi incrível. Eles não apenas constroem soluções — eles
+                        arquitetam o futuro do seu negócio."
                     </p>
                 </div>
-
                 <!--
                     =====================================================
                     PARA ADICIONAR MAIS DEPOIMENTOS:
@@ -1299,9 +1288,12 @@
 
             <!-- Indicadores de posição (bolinhas) -->
             <div id="testimonial-dots" class="flex justify-center gap-2 mt-8">
-                <button class="testimonial-dot h-2 rounded-full bg-primary transition-all duration-300 w-6" data-index="0"></button>
-                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2" data-index="1"></button>
-                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2" data-index="2"></button>
+                <button class="testimonial-dot h-2 rounded-full bg-primary transition-all duration-300 w-6"
+                    data-index="0"></button>
+                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2"
+                    data-index="1"></button>
+                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2"
+                    data-index="2"></button>
             </div>
         </section>
 
@@ -1309,14 +1301,13 @@
         <script>
         (function() {
             var track = document.getElementById('testimonials-track');
-            var btnPrev = document.getElementById('testimonial-prev');
-            var btnNext = document.getElementById('testimonial-next');
             var dots = document.querySelectorAll('.testimonial-dot');
-            if (!track || !btnPrev || !btnNext) return;
+            if (!track) return;
 
             var cards = Array.from(track.querySelectorAll('.snap-start'));
             var total = cards.length;
             var current = 0;
+            var autoPlayTimer;
 
             function updateDots(idx) {
                 dots.forEach(function(d, i) {
@@ -1329,33 +1320,45 @@
             }
 
             function goTo(idx) {
-                idx = Math.max(0, Math.min(total - 1, idx));
+                if (idx < 0) idx = total - 1;
+                if (idx >= total) idx = 0;
+                
                 current = idx;
                 var cardLeft = cards[idx].offsetLeft;
                 track.scrollTo({ left: cardLeft, behavior: 'smooth' });
                 updateDots(current);
             }
 
-            btnPrev.addEventListener('click', function() { goTo(current - 1); });
-            btnNext.addEventListener('click', function() { goTo(current + 1); });
+            function startAutoPlay() {
+                clearInterval(autoPlayTimer);
+                autoPlayTimer = setInterval(function() {
+                    goTo(current + 1);
+                }, 4000);
+            }
+
+            function resetAutoPlay() {
+                startAutoPlay();
+            }
 
             dots.forEach(function(dot) {
                 dot.addEventListener('click', function() {
                     goTo(parseInt(this.dataset.index, 10));
+                    resetAutoPlay();
                 });
             });
 
-            // Swipe no mobile
             var startX = 0;
             track.addEventListener('touchstart', function(e) {
                 startX = e.touches[0].clientX;
+                clearInterval(autoPlayTimer);
             }, { passive: true });
+            
             track.addEventListener('touchend', function(e) {
                 var delta = startX - e.changedTouches[0].clientX;
                 if (Math.abs(delta) > 40) goTo(delta > 0 ? current + 1 : current - 1);
+                resetAutoPlay();
             }, { passive: true });
 
-            // Sincroniza dots com scroll manual
             var scrollTimer;
             track.addEventListener('scroll', function() {
                 clearTimeout(scrollTimer);
@@ -1365,12 +1368,15 @@
                         var dist = Math.abs(c.offsetLeft - track.scrollLeft);
                         if (dist < minDist) { minDist = dist; closest = i; }
                     });
-                    if (closest !== current) { current = closest; updateDots(current); }
+                    if (closest !== current) { 
+                        current = closest; 
+                        updateDots(current); 
+                    }
                 }, 80);
             }, { passive: true });
 
-            // Estado inicial
             goTo(0);
+            startAutoPlay();
         })();
         </script>
         <!-- FAQ Section -->
