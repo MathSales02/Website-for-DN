@@ -636,54 +636,93 @@
 
 
 
-        <!-- Horizontal Scroll Section (Destaques) -->
+        <!-- Horizontal Scroll Section (Casos de Sucesso) -->
         <section id="horizontal-scroll-container"
             class="relative w-full h-screen overflow-hidden bg-surface-container-lowest">
             <div class="absolute top-24 left-4 md:left-16 z-20">
-                <h2 class="font-headline-lg text-3xl md:text-6xl text-white">Trabalhos em Destaque</h2>
+                <h2 class="font-headline-lg text-3xl md:text-6xl text-white">Casos de Sucesso</h2>
                 <div class="h-1 w-24 bg-primary mt-4"></div>
             </div>
 
             <div id="horizontal-panels" class="flex h-full w-[400vw]">
                 <!-- Panel 1 -->
-                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 1" />
-                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
-                        <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Projeto
-                            Alpha</span>
-                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">Plataforma Fintech</h3>
-                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Redesenhamos a experiência
-                            de investimentos para
-                            a nova geração, focado em velocidade extrema e conversão.</p>
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative group">
+                    <video class="testimonial-video w-full h-full object-cover opacity-50 absolute inset-0 z-0 transition-opacity duration-500 group-hover:opacity-70"
+                        src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="none"></video>
+                    
+                    <!-- Overlay Play Button -->
+                    <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                        <button class="play-btn pointer-events-auto w-20 h-20 bg-primary/80 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.5)]">
+                            <span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+                        </button>
+                    </div>
+
+                    <div class="relative z-20 glass-card p-6 md:p-10 rounded-2xl max-w-2xl w-full translate-y-32 md:translate-y-40 self-end mb-16 md:mb-24">
+                        <div class="flex items-center gap-1 text-primary mb-3">
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-2 block">João Silva, CEO Alpha</span>
+                        <h3 class="font-display-xl text-2xl md:text-4xl text-white mb-2">"A melhor decisão que já tomamos"</h3>
+                        <p class="font-body-lg text-xs md:text-sm text-on-surface-variant">A nova plataforma converte 3x mais que a antiga. Um trabalho impecável e direto ao ponto.</p>
                     </div>
                 </div>
+
                 <!-- Panel 2 -->
-                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 2" />
-                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
-                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-4 block">Projeto
-                            Beta</span>
-                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">App de Saúde AI</h3>
-                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Interface limpa e preditiva
-                            para diagnóstico
-                            rápido apoiado por inteligência artificial institucional.</p>
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative group">
+                    <video class="testimonial-video w-full h-full object-cover opacity-50 absolute inset-0 z-0 transition-opacity duration-500 group-hover:opacity-70"
+                        src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="none"></video>
+                    
+                    <!-- Overlay Play Button -->
+                    <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                        <button class="play-btn pointer-events-auto w-20 h-20 bg-primary/80 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.5)]">
+                            <span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+                        </button>
+                    </div>
+
+                    <div class="relative z-20 glass-card p-6 md:p-10 rounded-2xl max-w-2xl w-full translate-y-32 md:translate-y-40 self-end mb-16 md:mb-24">
+                        <div class="flex items-center gap-1 text-primary mb-3">
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-2 block">Maria Fernanda, Diretora Beta</span>
+                        <h3 class="font-display-xl text-2xl md:text-4xl text-white mb-2">"Interface limpa e focada em resultados"</h3>
+                        <p class="font-body-lg text-xs md:text-sm text-on-surface-variant">Nosso App de Saúde teve adesão recorde após o redesign. O time da DN entende o que faz.</p>
                     </div>
                 </div>
+
                 <!-- Panel 3 -->
-                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
-                    <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop"
-                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 3" />
-                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
-                        <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Projeto
-                            Gamma</span>
-                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">E-commerce de Luxo</h3>
-                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Uma experiência de compra
-                            imersiva com modelos
-                            3D interativos e checkout instantâneo de 1 clique.</p>
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative group">
+                    <video class="testimonial-video w-full h-full object-cover opacity-50 absolute inset-0 z-0 transition-opacity duration-500 group-hover:opacity-70"
+                        src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop playsinline preload="none"></video>
+                    
+                    <!-- Overlay Play Button -->
+                    <div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                        <button class="play-btn pointer-events-auto w-20 h-20 bg-primary/80 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 transform group-hover:scale-110 group-hover:bg-primary shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.5)]">
+                            <span class="material-symbols-outlined text-4xl ml-1">play_arrow</span>
+                        </button>
+                    </div>
+
+                    <div class="relative z-20 glass-card p-6 md:p-10 rounded-2xl max-w-2xl w-full translate-y-32 md:translate-y-40 self-end mb-16 md:mb-24">
+                        <div class="flex items-center gap-1 text-primary mb-3">
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined text-sm md:text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-2 block">Carlos Eduardo, CTO Gamma</span>
+                        <h3 class="font-display-xl text-2xl md:text-4xl text-white mb-2">"Experiência premium sem igual"</h3>
+                        <p class="font-body-lg text-xs md:text-sm text-on-surface-variant">Nosso e-commerce de luxo ganhou vida. Os usuários não querem mais sair do site.</p>
                     </div>
                 </div>
+
                 <!-- Panel 4 (End) -->
                 <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
                     <h2 class="font-display-xl text-4xl md:text-9xl text-white text-center">Inovação<br /><span
@@ -1699,6 +1738,16 @@
 
 
     <script src="js/main.js"></script>
+
+    <!-- Video Lightbox Modal -->
+    <div id="video-lightbox" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+        <button id="close-lightbox" class="absolute top-6 right-6 md:top-10 md:right-10 text-white hover:text-primary transition-colors z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+        <div class="w-full max-w-5xl px-4 md:px-8 aspect-video relative">
+            <video id="lightbox-video" class="w-full h-full rounded-2xl shadow-2xl object-cover" controls playsinline></video>
+        </div>
+    </div>
 </body>
 
 </html>
