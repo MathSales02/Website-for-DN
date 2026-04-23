@@ -934,31 +934,87 @@
             closeLightbox();
         }
     });
-})();
-
+})()
 
 // ==========================================
-// Benefits Stacking Animation
+// E-Book Section Animation
 // ==========================================
 (function() {
-    const cards = gsap.utils.toArray('.benefit-card');
-    
-    if (cards.length === 0) return;
+    const book = document.getElementById('ebook-book');
+    const pages = [
+        document.getElementById('ebook-page-1'),
+        document.getElementById('ebook-page-2'),
+        document.getElementById('ebook-page-3'),
+    ];
+    const bullets = [
+        document.getElementById('ebook-bullet-1'),
+        document.getElementById('ebook-bullet-2'),
+        document.getElementById('ebook-bullet-3'),
+    ];
+    const cta = document.getElementById('ebook-cta');
+    const driver = document.getElementById('ebook-scroll-driver');
 
-    cards.forEach((card, index) => {
-        // Skip the last card
-        if (index === cards.length - 1) return;
+    if (!book || !driver) return;
 
-        gsap.to(card, {
-            scale: 0.90,
-            opacity: 0.3,
-            filter: "blur(5px)",
-            scrollTrigger: {
-                trigger: cards[index + 1],
-                start: "top 75%",
-                end: "top 25%",
-                scrub: true,
+    // 1. Animate the book floating up & rotating on entry
+    gsap.from(book, {
+        y: 80,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+            trigger: driver,
+            start: 'top 80%',
+            once: true,
+        }
+    });
+
+    // 2. Gentle float animation
+    gsap.to(book, {
+        y: -16,
+        duration: 2.5,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+    });
+
+    // 3. Page-flip + bullet reveal driven by scroll progress
+    const totalSteps = pages.length + 1; // 3 pages + 1 for CTA
+
+    ScrollTrigger.create({
+        trigger: driver,
+        start: 'top top',
+        end: 'bottom bottom',
+        onUpdate: (self) => {
+            const progress = self.progress; // 0 to 1
+            const stepSize = 1 / totalSteps;
+
+            pages.forEach((page, i) => {
+                if (!page) return;
+                const stepStart = (i + 1) * stepSize;
+                if (progress >= stepStart) {
+                    // Show this page flipped over the cover
+                    page.style.display = 'block';
+                    const localProgress = Math.min((progress - stepStart) / stepSize, 1);
+                    const angle = -180 * localProgress;
+                    page.style.transform = 'rotateY(' + angle + 'deg)';
+
+                    // Reveal bullet
+                    const bullet = bullets[i];
+                    if (bullet && localProgress > 0.4) {
+                        bullet.style.opacity = '1';
+                        bullet.style.transform = 'translateX(0)';
+                    }
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+
+            // Show CTA at end
+            if (cta && progress >= 0.9) {
+                cta.style.opacity = '1';
+                cta.style.transform = 'translateY(0)';
             }
-        });
+        }
     });
 })();
