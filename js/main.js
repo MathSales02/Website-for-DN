@@ -39,22 +39,32 @@
                     const bg = document.getElementById('globe-bg');
                     const content = document.getElementById('globe-content');
 
-                    // --- Scroll Transitions with PINNING ---
-                    const tl = gsap.timeline({
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top top',
-                            end: '+=200%',
-                            scrub: true,
-                            pin: true
-                        }
-                    });
+                    const isMobile = window.innerWidth < 768;
 
-                    tl.to(bg, { clipPath: 'circle(150% at center)', duration: 1, ease: 'power2.inOut' });
-                    tl.to(content, { opacity: 1, duration: 0.5, ease: 'power1.out' }, "-=0.5");
-                    tl.to({}, { duration: 1 });
-                    tl.to(content, { opacity: 0, duration: 0.5, ease: 'power1.out' });
-                    tl.to(bg, { clipPath: 'circle(0% at center)', duration: 1, ease: 'power2.inOut' }, "-=0.2");
+                    if (isMobile) {
+                        // Mobile: no pinning — always show white bg, fade content in on scroll
+                        gsap.set(bg, { clipPath: 'circle(150% at center)' });
+                        gsap.to(content, {
+                            opacity: 1, duration: 0.8, ease: 'power1.out',
+                            scrollTrigger: { trigger: section, start: 'top 85%', once: true }
+                        });
+                    } else {
+                        // Desktop: full pinned reveal animation
+                        const tl = gsap.timeline({
+                            scrollTrigger: {
+                                trigger: section,
+                                start: 'top top',
+                                end: '+=200%',
+                                scrub: true,
+                                pin: true
+                            }
+                        });
+                        tl.to(bg, { clipPath: 'circle(150% at center)', duration: 1, ease: 'power2.inOut' });
+                        tl.to(content, { opacity: 1, duration: 0.5, ease: 'power1.out' }, "-=0.5");
+                        tl.to({}, { duration: 1 });
+                        tl.to(content, { opacity: 0, duration: 0.5, ease: 'power1.out' });
+                        tl.to(bg, { clipPath: 'circle(0% at center)', duration: 1, ease: 'power2.inOut' }, "-=0.2");
+                    }
                 }
 
                 if (document.readyState === 'loading') {
@@ -192,28 +202,36 @@
         }, (context) => {
             let { isMobile } = context.conditions;
 
-            // Pin and sequence text fade + logo zoom out on scroll
-            const tlScroll = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#hero-geometric",
-                    start: "top top",
-                    end: isMobile ? "+=50%" : "+=150%", // Shorter pin duration on mobile
-                    scrub: 1,
-                    pin: true,
-                    pinSpacing: true // Pushes subsequent content down normally
-                }
-            });
-
-            // Phase 1: Text zooms in and fades out, revealing the watermark logo which also fades in
-            tlScroll.to("#intro-text-container", { scale: 1.5, opacity: 0, duration: 1, ease: "power2.in" }, 0);
-            tlScroll.to("#intro-logo", { opacity: 0.8, duration: 1 }, 0);
-
-            // Phase 2: The logo scales down to 1 (normal size in the center of the hero section)
-            tlScroll.to("#intro-logo", { scale: 1, opacity: 1, duration: 2, ease: "power3.inOut" }, 1);
-            
-            // Phase 3: Then the overlay (including scroll indicator and background blur) fades out, and header drops in
-            tlScroll.to("#intro-sequence", { opacity: 0, duration: 0.8, ease: "none", pointerEvents: "none" }, 3);
-            tlScroll.to("header", { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", pointerEvents: "auto" }, 3);
+            if (isMobile) {
+                // Mobile: animate the intro without scroll-pinning (avoids scroll lock)
+                gsap.to("#intro-text-container", { scale: 1.15, opacity: 0, duration: 0.8, delay: 1.5, ease: "power2.in" });
+                gsap.to("#intro-logo", { opacity: 1, scale: 1, duration: 1.2, delay: 1.8, ease: "power3.inOut" });
+                gsap.to("#intro-sequence", {
+                    opacity: 0, duration: 0.8, delay: 3.0, ease: "none",
+                    onComplete: function() {
+                        var el = document.getElementById('intro-sequence');
+                        if (el) { el.style.pointerEvents = 'none'; el.style.display = 'none'; }
+                    }
+                });
+                gsap.to("header", { opacity: 1, y: 0, duration: 0.8, delay: 3.0, ease: "power2.out", pointerEvents: "auto" });
+            } else {
+                // Desktop: full scroll-pinned intro sequence
+                const tlScroll = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#hero-geometric",
+                        start: "top top",
+                        end: "+=150%",
+                        scrub: 1,
+                        pin: true,
+                        pinSpacing: true
+                    }
+                });
+                tlScroll.to("#intro-text-container", { scale: 1.5, opacity: 0, duration: 1, ease: "power2.in" }, 0);
+                tlScroll.to("#intro-logo", { opacity: 0.8, duration: 1 }, 0);
+                tlScroll.to("#intro-logo", { scale: 1, opacity: 1, duration: 2, ease: "power3.inOut" }, 1);
+                tlScroll.to("#intro-sequence", { opacity: 0, duration: 0.8, ease: "none", pointerEvents: "none" }, 3);
+                tlScroll.to("header", { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", pointerEvents: "auto" }, 3);
+            }
         });
 
         // Hero Geometric Entry Animation

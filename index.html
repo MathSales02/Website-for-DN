@@ -211,7 +211,37 @@
         </script>
 
         <link rel="stylesheet" href="css/styles.css">
-    </head>
+    
+    <style id="mobile-fixes">
+        /* Globe: always show white bg and content on mobile */
+        @media (max-width: 767px) {
+            .globe-bg-element {
+                clip-path: circle(150% at center) !important;
+            }
+            .globe-content-wrapper {
+                opacity: 1 !important;
+            }
+            #globe-section {
+                background-color: #ffffff;
+            }
+        }
+        /* Image comparison slider: prevent page scroll while dragging */
+        #img-comparison-wrapper {
+            touch-action: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        /* Hero: ensure text is centered vertically on mobile */
+        @media (max-width: 767px) {
+            #intro-text-container {
+                padding-top: env(safe-area-inset-top, 0px);
+            }
+            #hero-geometric {
+                padding-top: 2rem;
+            }
+        }
+    </style>
+</head>
 
 <body class="font-body-md bg-background selection:bg-primary selection:text-on-primary">
     <!-- Custom Cursor -->
@@ -292,13 +322,13 @@
     <main class="bg-background relative z-10">
         <!-- Hero Section (Glassmorphism Trust) -->
         <section id="hero-geometric"
-            class="relative w-full min-h-screen bg-[#0e0e0e] text-white overflow-x-hidden flex items-center pt-16 md:pt-28 pb-16 px-4">
+            class="relative w-full min-h-screen bg-[#0e0e0e] text-white overflow-x-hidden flex items-center pt-8 md:pt-28 pb-16 px-4">
 
             <!-- Intro Sequence Overlay -->
             <div id="intro-sequence"
                 class="absolute inset-0 z-[100] flex flex-col items-center justify-center bg-[#0e0e0e]/80 backdrop-blur-sm pointer-events-none">
                 <div id="intro-text-container"
-                    class="absolute inset-0 flex flex-col items-center justify-center px-4 z-20 text-center -translate-y-12 md:translate-y-0">
+                    class="absolute inset-0 flex flex-col items-center justify-center px-4 z-20 text-center">
                     <h2 class="font-display-xl text-3xl md:text-5xl text-white mb-4 opacity-0 translate-y-10">Pare de
                         perder leads.</h2>
                     <h1 class="font-display-xl text-5xl md:text-8xl text-primary italic opacity-0 translate-y-10">Comece
@@ -566,7 +596,7 @@
 
                 <!-- Image Comparison Slider -->
                 <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
-                    style="aspect-ratio: 16/9;" id="img-comparison-wrapper">
+                    style="aspect-ratio: 16/9; touch-action: none; user-select: none; -webkit-user-select: none;" id="img-comparison-wrapper">
 
                     <!-- BEFORE image (left) -->
                     <img id="img-before" src="img/antes.png" alt="Antes — site antigo"
@@ -673,13 +703,13 @@
 
         <!-- Globe Section (Atendemos o mundo todo) -->
         <section id="globe-section"
-            class="relative w-full min-h-screen py-24 md:py-0 md:h-screen flex items-center justify-center overflow-hidden z-10">
+            class="relative w-full min-h-[100dvh] py-16 md:py-0 md:h-screen flex items-center justify-center overflow-visible md:overflow-hidden z-10">
             <!-- The expanding white background -->
-            <div id="globe-bg" class="absolute inset-0 bg-white" style="clip-path: circle(0% at center);"></div>
+            <div id="globe-bg" class="absolute inset-0 bg-white globe-bg-element" style="clip-path: circle(0% at center);"></div>
 
             <!-- Content -->
             <div id="globe-content"
-                class="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12 opacity-0">
+                class="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12 globe-content-wrapper">
                 <div class="lg:w-5/12 text-black flex flex-col justify-center">
                     <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Alcance Global</span>
                     <h2 class="font-headline-lg text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
