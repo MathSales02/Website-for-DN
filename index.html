@@ -1174,79 +1174,205 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="py-40 px-8 max-w-7xl mx-auto overflow-hidden">
+        <!-- ===== SEÇÃO DE DEPOIMENTOS ===== -->
+        <section id="testimonials-section" class="py-40 px-8 max-w-7xl mx-auto overflow-hidden">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                 <div>
                     <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Depoimentos</span>
                     <h2 class="font-headline-lg text-headline-lg text-white">O que falam de nós</h2>
                 </div>
+                <!-- Botões de navegação do carrossel -->
                 <div class="flex gap-4">
-                    <button
-                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white">
-                        <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                    <button id="testimonial-prev"
+                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all text-white active:scale-95">
+                        <span class="material-symbols-outlined">chevron_left</span>
                     </button>
-                    <button
-                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white">
-                        <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                    <button id="testimonial-next"
+                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all text-white active:scale-95">
+                        <span class="material-symbols-outlined">chevron_right</span>
                     </button>
                 </div>
             </div>
-            <div class="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar">
-                <!-- Testimonial 1 -->
-                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
+
+            <!-- Container do carrossel (scroll horizontal com snap) -->
+            <div id="testimonials-track" class="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory no-scrollbar scroll-smooth">
+
+                <!-- ================================================ -->
+                <!-- DEPOIMENTO 1                                       -->
+                <!-- ================================================ -->
+                <div class="min-w-[300px] md:min-w-[420px] glass-card p-8 md:p-12 rounded-2xl snap-start flex-shrink-0">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
-                            <img alt="Marcus Thorne" class="w-full h-full object-cover"
-                                data-alt="Close up portrait of a middle-aged male executive in a sharp black suit with professional lighting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOyvw61MG5QQaqobxEqp8q1Du1r7URExLJhpkRnZlZ9T4TKqesi1VrWULuXrJ5kxPqblCHhlO4W2o7QZDs_DLb0A_BMBNxW8cO6CKsHiqEQy0DpIZXw7n60_17nys_0QMtFAkV12LVqXB7QtQVhwjoSNWaPd6yFHEu6BK-jBoUB75lfBAegtblas7WRmo9eOyMUMoTTGfhE5o7unENCQf7zEWO3AzgBz_mq7bv6wUQhIZlQzS5I2fQRLDAmiy-CjXrC2fwxi8g_WI" />
+                        <!--
+                            FOTO DA PESSOA 1
+                            Coloque o arquivo de imagem na pasta: img/
+                            Depois troque o src abaixo pelo nome do arquivo.
+                            Exemplo: src="img/gabriel.jpg"
+                            Tamanho ideal: 200x200px, recortado em círculo automaticamente.
+                        -->
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img
+                                alt="Gabriel Henrique"
+                                class="w-full h-full object-cover"
+                                src="img/foto-pessoa-1.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>G</div>'"
+                            />
                         </div>
                         <div>
-                            <h4 class="font-headline-md text-sm font-bold text-white">Marcus Thorne</h4>
-                            <p class="text-xs text-primary font-bold uppercase tracking-tighter">CTO, Vertex Global</p>
+                            <h4 class="text-sm font-bold text-white">Gabriel Henrique</h4>
+                            <p class="text-xs text-primary font-bold uppercase tracking-tighter">Design</p>
                         </div>
                     </div>
-                    <p class="font-body-lg italic text-white/90">
-                        "The level of technical sophistication Institutional brought to our infrastructure overhaul was
-                        unprecedented. They don't just build; they architect futures."
+                    <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
+                    <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
+                        "Empresa que eu posso confiar de olhos fechados. Entregam resultados reais e com muita agilidade."
                     </p>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
+
+                <!-- ================================================ -->
+                <!-- DEPOIMENTO 2                                       -->
+                <!-- ================================================ -->
+                <div class="min-w-[300px] md:min-w-[420px] glass-card p-8 md:p-12 rounded-2xl snap-start flex-shrink-0">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
-                            <img alt="Sarah Jenkins" class="w-full h-full object-cover"
-                                data-alt="Professional headshot of a woman in her 30s with confident expression and minimalist office background"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA--O8fl_1dLrn9U6_e7QvLonXkx8ji6YV04CDZu6RmoLrxSmH2pSQ3mZnZjMOqPA4qG1JHrGAZ9tjOlfst_t_ViE0OtJglTlXkVBupC11xp6GfN06guGA7leM6o-1dILGdnxrakm1SOsEIxeT319Hs3HBOdIu_efDGtlNFldKC94X7Km2-YcerHzE4cvWppeLVslt0PxzN5oKv2H4_gcULAPAFDmH_UTb0upnSC5dZLZgcwvbgVJN1CC5paDA6tCC4E35vD3KhHp0" />
+                        <!--
+                            FOTO DA PESSOA 2
+                            Coloque o arquivo de imagem na pasta: img/
+                            Exemplo: src="img/david.jpg"
+                        -->
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img
+                                alt="David Chen"
+                                class="w-full h-full object-cover"
+                                src="img/foto-pessoa-2.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>D</div>'"
+                            />
                         </div>
                         <div>
-                            <h4 class="font-headline-md text-sm font-bold text-white">Gabriel Henrique</h4>
-                            <p class="text-xs text-primary font-bold uppercase tracking-tighter"> Design</p>
-                        </div>
-                    </div>
-                    <p class="font-body-lg italic text-white/90">
-                        "Empresa que eu posso confiar de olhos fechados"
-                    </p>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
-                            <img alt="David Chen" class="w-full h-full object-cover"
-                                data-alt="Portrait of a young tech entrepreneur with creative studio background and warm soft lighting"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTF0904YZ0gkp9ahS8C4Y7fckmoWjuVdey1UtAHikRomhMNh6FY2IHd7UkZUI4cRw197ysW-qbr4VRfcuO4vssaFh_22jaV1HxhD8_PDIa56ByYYIJisb3LeUY17MLB3OHg2Ks9g40SpU-FuYW5Zab9KLOlLcQ1pW6XFq-wbfL3Zvq-W8txPOIlUeZlKjKG6L4huD0aGv28O1q5nnDrnFB2Pf2sgiv3sG6vPIuYmIa8VNkNRCoYsKyRnZGgEclXdqqX8jd1upJJ-s" />
-                        </div>
-                        <div>
-                            <h4 class="font-headline-md text-sm font-bold text-white">David Chen</h4>
+                            <h4 class="text-sm font-bold text-white">David Chen</h4>
                             <p class="text-xs text-primary font-bold uppercase tracking-tighter">Founder, Atmos Lab</p>
                         </div>
                     </div>
-                    <p class="font-body-lg italic text-white/90">
-                        "Exceptional delivery speed without a single compromise on quality. The high-fidelity prototype
-                        they produced became our primary fundraising tool."
+                    <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
+                    <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
+                        "Velocidade de entrega sem precedentes e qualidade impecável. O protótipo que criaram se tornou nossa principal ferramenta de captação."
                     </p>
                 </div>
+
+                <!-- ================================================ -->
+                <!-- DEPOIMENTO 3                                       -->
+                <!-- ================================================ -->
+                <div class="min-w-[300px] md:min-w-[420px] glass-card p-8 md:p-12 rounded-2xl snap-start flex-shrink-0">
+                    <div class="flex items-center gap-4 mb-8">
+                        <!--
+                            FOTO DA PESSOA 3
+                            Coloque o arquivo de imagem na pasta: img/
+                            Exemplo: src="img/marcus.jpg"
+                        -->
+                        <div class="w-14 h-14 rounded-full overflow-hidden bg-white/10 flex-shrink-0 ring-2 ring-primary/30">
+                            <img
+                                alt="Marcus Thorne"
+                                class="w-full h-full object-cover"
+                                src="img/foto-pessoa-3.jpg"
+                                onerror="this.outerHTML='<div class=\'w-14 h-14 flex items-center justify-center text-primary font-bold text-xl\'>M</div>'"
+                            />
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Marcus Thorne</h4>
+                            <p class="text-xs text-primary font-bold uppercase tracking-tighter">CTO, Vertex Global</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-0.5 mb-5 text-yellow-400">★★★★★</div>
+                    <p class="italic text-white/90 leading-relaxed text-sm md:text-base">
+                        "O nível de sofisticação que trouxeram foi incrível. Eles não apenas constroem soluções — eles arquitetam o futuro do seu negócio."
+                    </p>
+                </div>
+
+                <!--
+                    =====================================================
+                    PARA ADICIONAR MAIS DEPOIMENTOS:
+                    Copie o bloco acima (do div com class="min-w-[300px]..."
+                    até o </div> correspondente) e cole aqui.
+                    Não esqueça de atualizar o nome, cargo, foto e texto.
+                    =====================================================
+                -->
+
+            </div>
+
+            <!-- Indicadores de posição (bolinhas) -->
+            <div id="testimonial-dots" class="flex justify-center gap-2 mt-8">
+                <button class="testimonial-dot h-2 rounded-full bg-primary transition-all duration-300 w-6" data-index="0"></button>
+                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2" data-index="1"></button>
+                <button class="testimonial-dot h-2 rounded-full bg-white/20 transition-all duration-300 w-2" data-index="2"></button>
             </div>
         </section>
+
+        <!-- JS do carrossel de depoimentos (botões + swipe + dots) -->
+        <script>
+        (function() {
+            var track = document.getElementById('testimonials-track');
+            var btnPrev = document.getElementById('testimonial-prev');
+            var btnNext = document.getElementById('testimonial-next');
+            var dots = document.querySelectorAll('.testimonial-dot');
+            if (!track || !btnPrev || !btnNext) return;
+
+            var cards = Array.from(track.querySelectorAll('.snap-start'));
+            var total = cards.length;
+            var current = 0;
+
+            function updateDots(idx) {
+                dots.forEach(function(d, i) {
+                    var active = i === idx;
+                    d.classList.toggle('bg-primary', active);
+                    d.classList.toggle('w-6', active);
+                    d.classList.toggle('bg-white\/20', !active);
+                    d.classList.toggle('w-2', !active);
+                });
+            }
+
+            function goTo(idx) {
+                idx = Math.max(0, Math.min(total - 1, idx));
+                current = idx;
+                var cardLeft = cards[idx].offsetLeft;
+                track.scrollTo({ left: cardLeft, behavior: 'smooth' });
+                updateDots(current);
+            }
+
+            btnPrev.addEventListener('click', function() { goTo(current - 1); });
+            btnNext.addEventListener('click', function() { goTo(current + 1); });
+
+            dots.forEach(function(dot) {
+                dot.addEventListener('click', function() {
+                    goTo(parseInt(this.dataset.index, 10));
+                });
+            });
+
+            // Swipe no mobile
+            var startX = 0;
+            track.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+            track.addEventListener('touchend', function(e) {
+                var delta = startX - e.changedTouches[0].clientX;
+                if (Math.abs(delta) > 40) goTo(delta > 0 ? current + 1 : current - 1);
+            }, { passive: true });
+
+            // Sincroniza dots com scroll manual
+            var scrollTimer;
+            track.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    var closest = 0, minDist = Infinity;
+                    cards.forEach(function(c, i) {
+                        var dist = Math.abs(c.offsetLeft - track.scrollLeft);
+                        if (dist < minDist) { minDist = dist; closest = i; }
+                    });
+                    if (closest !== current) { current = closest; updateDots(current); }
+                }, 80);
+            }, { passive: true });
+
+            // Estado inicial
+            goTo(0);
+        })();
+        </script>
         <!-- FAQ Section -->
         <section id="faq-section" class="py-40 px-8 max-w-4xl mx-auto">
             <h2 class="font-headline-lg text-headline-lg text-white mb-16 text-center">Dúvidas Frequentes</h2>
