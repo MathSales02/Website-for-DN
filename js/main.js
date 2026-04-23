@@ -880,38 +880,8 @@
 
     if (!lightbox || !lightboxVideo || panels.length === 0) return;
 
-    // 1. Intersection Observer for Auto-play / Auto-pause
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5 // 50% of the panel must be visible
-    };
-
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const video = entry.target.querySelector('video.testimonial-video');
-            if (!video) return;
-
-            if (entry.isIntersecting) {
-                // Play muted video when visible
-                video.muted = true;
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Autoplay prevented by browser:", error);
-                    });
-                }
-            } else {
-                // Pause when out of view
-                video.pause();
-            }
-        });
-    }, observerOptions);
-
     panels.forEach(panel => {
-        videoObserver.observe(panel);
-
-        // 2. Setup Lightbox Trigger
+        // Setup Lightbox Trigger
         const playBtn = panel.querySelector('.play-btn');
         const bgVideo = panel.querySelector('video.testimonial-video');
 
@@ -928,16 +898,25 @@
 
                 // Play lightbox video with sound
                 lightboxVideo.muted = false;
-                lightboxVideo.play();
+                const playPromise = lightboxVideo.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(e => console.log("Lightbox autoplay prevented", e));
+                }
             });
         }
     });
 
-    // 3. Close Lightbox Logic
+    // Close Lightbox Logic
     function closeLightbox() {
         lightbox.classList.add('opacity-0', 'pointer-events-none');
         lightboxVideo.pause();
         lightboxVideo.src = ""; // Clear src to stop buffering
+        
+        // Resume all background videos
+        document.querySelectorAll('video.testimonial-video').forEach(v => {
+            const p = v.play();
+            if (p !== undefined) p.catch(e => {});
+        });
     }
 
     closeLightboxBtn.addEventListener('click', closeLightbox);
