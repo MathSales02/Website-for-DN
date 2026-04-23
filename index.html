@@ -673,12 +673,13 @@
                             <span class="material-symbols-outlined text-sm md:text-base"
                                 style="font-variation-settings: 'FILL' 1;">star</span>
                         </div>
-                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-2 block">João Silva, CEO
-                            Alpha</span>
-                        <h3 class="font-display-xl text-2xl md:text-4xl text-white mb-2">"A melhor decisão que já
-                            tomamos"</h3>
-                        <p class="font-body-lg text-xs md:text-sm text-on-surface-variant">A nova plataforma converte 3x
-                            mais que a antiga. Um trabalho impecável e direto ao ponto.</p>
+                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-2 block">Laís, CEO
+                            Connect Imoveis Litoral</span>
+                        <h3 class="font-display-xl text-2xl md:text-4xl text-white mb-2">"Fechamos e os resultados
+                            vieram imediatamente."</h3>
+                        <p class="font-body-lg text-xs md:text-sm text-on-surface-variant">A nova plataforma
+                            desenvolvida para a Connect Imóveis Litoral aumentou significativamente as conversões,
+                            entregando uma experiência mais eficiente, moderna e focada em resultados.</p>
                     </div>
                 </div>
 
@@ -923,63 +924,81 @@
 
         </section>
 
-        <!-- Benefits Section -->
-        <section id="benefits-section" class="py-40 px-8 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Benefit 1 -->
-                <div class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-all duration-500">
-                        <span class="material-symbols-outlined text-primary group-hover:text-black"
-                            data-icon="precision_manufacturing">precision_manufacturing</span>
+        <!-- Premium Benefits Section (Stacking Cards) -->
+        <section id="benefits-section" class="relative bg-surface-container-lowest py-32 px-4 md:px-8 z-10">
+            <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 relative">
+                
+                <!-- Left: Sticky Content -->
+                <div class="lg:w-5/12 relative">
+                    <div class="sticky top-40 pr-0 md:pr-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-primary text-xs font-bold uppercase tracking-wider">A Vantagem Competitiva</span>
+                        </div>
+                        <h2 class="font-headline-lg text-4xl md:text-5xl xl:text-6xl text-white mb-6 leading-tight">
+                            Por que empresas fecham com a <span class="text-primary">D Negócios?</span>
+                        </h2>
+                        <p class="font-body-lg text-on-surface-variant text-lg md:text-xl mb-10 leading-relaxed">
+                            Não entregamos apenas serviços bonitos. Construímos <strong>máquinas de vendas</strong>. Nossa metodologia une tecnologia de ponta, design premium e estratégias validadas para escalar o seu faturamento de forma previsível.
+                        </p>
+                        <a href="#services-section" class="inline-flex items-center justify-center gap-3 bg-white text-black font-semibold px-8 py-4 rounded-full hover:bg-primary transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.4)] group">
+                            Quero Escalar Minha Empresa
+                            <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+                        </a>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-white mb-4">Estratégias que geram resultado real
-                    </h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        Nada de achismo. Cada ação é baseada em dados, análise de mercado e performance — focado em
-                        crescimento e faturamento.
-                    </p>
                 </div>
-                <!-- Benefit 2 -->
-                <div
-                    class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500 mt-8 lg:mt-12">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 border border-secondary/20 group-hover:bg-secondary transition-all duration-500">
-                        <span class="material-symbols-outlined text-secondary group-hover:text-black"
-                            data-icon="palette">palette</span>
+
+                <!-- Right: Stacking Cards Container -->
+                <div class="lg:w-7/12 flex flex-col gap-8 pb-10" id="benefits-stack">
+                    
+                    <!-- Benefit 1 -->
+                    <div class="benefit-card sticky top-32 glass-card p-10 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl bg-[#0a0a0a]/90 backdrop-blur-2xl origin-top overflow-hidden" style="z-index: 1;">
+                        <div class="absolute -right-10 -top-10 text-[12rem] font-bold text-white/[0.03] leading-none pointer-events-none font-['Space_Grotesk']">01</div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-8 border border-primary/30 relative z-10">
+                            <span class="material-symbols-outlined text-3xl text-primary" data-icon="precision_manufacturing">precision_manufacturing</span>
+                        </div>
+                        <h3 class="font-headline-md text-3xl text-white mb-4 relative z-10">Estratégias que geram resultado real</h3>
+                        <p class="font-body-md text-lg text-on-surface-variant relative z-10 leading-relaxed">
+                            Nada de achismo ou métricas de vaidade. Cada ação é baseada em dados, análise de mercado e performance absoluta — com o único foco de multiplicar seu crescimento e faturamento mensal.
+                        </p>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-white mb-4">Aumento previsível de vendas</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        Criamos processos e funis que transformam visitantes em clientes, trazendo consistência e escala
-                        para o seu negócio.
-                    </p>
-                </div>
-                <!-- Benefit 3 -->
-                <div class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-all duration-500">
-                        <span class="material-symbols-outlined text-primary group-hover:text-black"
-                            data-icon="speed">speed</span>
+
+                    <!-- Benefit 2 -->
+                    <div class="benefit-card sticky top-40 glass-card p-10 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl bg-[#0d0d0d]/90 backdrop-blur-2xl origin-top overflow-hidden" style="z-index: 2;">
+                        <div class="absolute -right-10 -top-10 text-[12rem] font-bold text-white/[0.03] leading-none pointer-events-none font-['Space_Grotesk']">02</div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center mb-8 border border-secondary/30 relative z-10">
+                            <span class="material-symbols-outlined text-3xl text-secondary" data-icon="palette">palette</span>
+                        </div>
+                        <h3 class="font-headline-md text-3xl text-white mb-4 relative z-10">Aumento previsível de vendas</h3>
+                        <p class="font-body-md text-lg text-on-surface-variant relative z-10 leading-relaxed">
+                            Criamos processos automatizados e funis de alta conversão que transformam visitantes curiosos em clientes fiéis, trazendo consistência, escala e previsibilidade para o fluxo de caixa do seu negócio.
+                        </p>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-white mb-4">Execução rápida e profissional</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        Agilidade na entrega sem perder qualidade. Sua empresa evolui mais rápido enquanto a
-                        concorrência ainda está planejando.
-                    </p>
-                </div>
-                <!-- Benefit 4 -->
-                <div
-                    class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500 mt-8 lg:mt-12">
-                    <div
-                        class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 border border-secondary/20 group-hover:bg-secondary transition-all duration-500">
-                        <span class="material-symbols-outlined text-secondary group-hover:text-black"
-                            data-icon="lock">lock</span>
+
+                    <!-- Benefit 3 -->
+                    <div class="benefit-card sticky top-48 glass-card p-10 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl bg-[#111111]/90 backdrop-blur-2xl origin-top overflow-hidden" style="z-index: 3;">
+                        <div class="absolute -right-10 -top-10 text-[12rem] font-bold text-white/[0.03] leading-none pointer-events-none font-['Space_Grotesk']">03</div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-8 border border-primary/30 relative z-10">
+                            <span class="material-symbols-outlined text-3xl text-primary" data-icon="speed">speed</span>
+                        </div>
+                        <h3 class="font-headline-md text-3xl text-white mb-4 relative z-10">Execução rápida e impecável</h3>
+                        <p class="font-body-md text-lg text-on-surface-variant relative z-10 leading-relaxed">
+                            Agilidade na entrega sem abrir mão da qualidade premium. Sua empresa evolui mais rápido e toma a frente do mercado enquanto a concorrência ainda está presa no planejamento estratégico.
+                        </p>
                     </div>
-                    <h3 class="font-headline-md text-headline-md text-white mb-4">Automação inteligente com IA</h3>
-                    <p class="font-body-md text-body-md text-on-surface-variant">
-                        Implementamos automações e inteligência artificial para otimizar atendimento, marketing e vendas
-                        — menos esforço, mais resultado.
-                    </p>
+
+                    <!-- Benefit 4 -->
+                    <div class="benefit-card sticky top-56 glass-card p-10 md:p-12 rounded-[2rem] border border-primary/20 shadow-[0_0_50px_rgba(var(--color-primary-rgb),0.1)] bg-[#141414]/90 backdrop-blur-2xl origin-top overflow-hidden" style="z-index: 4;">
+                        <div class="absolute -right-10 -top-10 text-[12rem] font-bold text-primary/[0.05] leading-none pointer-events-none font-['Space_Grotesk']">04</div>
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center mb-8 border border-secondary/30 relative z-10">
+                            <span class="material-symbols-outlined text-3xl text-secondary" data-icon="lock">lock</span>
+                        </div>
+                        <h3 class="font-headline-md text-3xl text-white mb-4 relative z-10">Automação inteligente com IA</h3>
+                        <p class="font-body-md text-lg text-on-surface-variant relative z-10 leading-relaxed">
+                            Implementamos automações avançadas e Inteligência Artificial para otimizar atendimento, qualificação de leads e vendas 24/7. Menos esforço operacional, muito mais resultado financeiro.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>

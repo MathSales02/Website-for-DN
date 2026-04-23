@@ -935,3 +935,30 @@
         }
     });
 })();
+
+
+// ==========================================
+// Benefits Stacking Animation
+// ==========================================
+(function() {
+    const cards = gsap.utils.toArray('.benefit-card');
+    
+    if (cards.length === 0) return;
+
+    cards.forEach((card, index) => {
+        // Skip the last card
+        if (index === cards.length - 1) return;
+
+        gsap.to(card, {
+            scale: 0.90,
+            opacity: 0.3,
+            filter: "blur(5px)",
+            scrollTrigger: {
+                trigger: cards[index + 1],
+                start: "top 75%",
+                end: "top 25%",
+                scrub: true,
+            }
+        });
+    });
+})();
