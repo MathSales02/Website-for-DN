@@ -956,65 +956,100 @@
 
     if (!book || !driver) return;
 
-    // 1. Animate the book floating up & rotating on entry
+    // Make all pages visible but rotated out of sight initially
+    pages.forEach(page => {
+        if (!page) return;
+        page.style.display = 'block';
+        page.style.transformOrigin = 'left center';
+        page.style.transform = 'rotateY(0deg)';
+        page.style.position = 'absolute';
+        page.style.inset = '0';
+        // Start all pages hidden behind the cover (0deg = same as cover)
+    });
+
+    // 1. Entry animation for the book
     gsap.from(book, {
-        y: 80,
+        y: 60,
         opacity: 0,
         duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
             trigger: driver,
-            start: 'top 80%',
+            start: 'top 85%',
             once: true,
         }
     });
 
-    // 2. Gentle float animation
+    // 2. Gentle float loop
     gsap.to(book, {
-        y: -16,
-        duration: 2.5,
+        y: -14,
+        duration: 2.6,
         ease: 'sine.inOut',
         repeat: -1,
         yoyo: true,
     });
 
-    // 3. Page-flip + bullet reveal driven by scroll progress
-    const totalSteps = pages.length + 1; // 3 pages + 1 for CTA
+    // 3. Scroll-driven page flip
+    function updateEbook() {
+        const driverRect = driver.getBoundingClientRect();
+        const totalScrollable = driver.offsetHeight - window.innerHeight;
+        const scrolled = -driverRect.top;
+        const progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
 
-    ScrollTrigger.create({
-        trigger: driver,
-        start: 'top top',
-        end: 'bottom bottom',
-        onUpdate: (self) => {
-            const progress = self.progress; // 0 to 1
-            const stepSize = 1 / totalSteps;
+        // Steps: page 1 at 0.1-0.35, page 2 at 0.35-0.6, page 3 at 0.6-0.85, CTA at 0.85+
+        const steps = [
+            { start: 0.10, end: 0.35, pageIdx: 0 },
+            { start: 0.35, end: 0.60, pageIdx: 1 },
+            { start: 0.60, end: 0.85, pageIdx: 2 },
+        ];
 
-            pages.forEach((page, i) => {
-                if (!page) return;
-                const stepStart = (i + 1) * stepSize;
-                if (progress >= stepStart) {
-                    // Show this page flipped over the cover
-                    page.style.display = 'block';
-                    const localProgress = Math.min((progress - stepStart) / stepSize, 1);
-                    const angle = -180 * localProgress;
-                    page.style.transform = 'rotateY(' + angle + 'deg)';
+        steps.forEach(({ start, end, pageIdx }) => {
+            const page = pages[pageIdx];
+            const bullet = bullets[pageIdx];
+            if (!page) return;
 
-                    // Reveal bullet
-                    const bullet = bullets[i];
-                    if (bullet && localProgress > 0.4) {
-                        bullet.style.opacity = '1';
-                        bullet.style.transform = 'translateX(0)';
-                    }
-                } else {
-                    page.style.display = 'none';
-                }
-            });
+            let angle = 0;
+            if (progress < start) {
+                // Not yet visible — hide behind cover
+                angle = 0;
+                page.style.zIndex = String(pageIdx);
+            } else if (progress >= end) {
+                // Fully turned
+                angle = -180;
+                page.style.zIndex = String(10 + pageIdx);
+                if (bullet) { bullet.style.opacity = '1'; bullet.style.transform = 'translateX(0)'; }
+            } else {
+                // Turning
+                const local = (progress - start) / (end - start);
+                angle = -180 * local;
+                page.style.zIndex = String(10 + pageIdx);
+                if (bullet && local > 0.5) { bullet.style.opacity = '1'; bullet.style.transform = 'translateX(0)'; }
+            }
+            page.style.transform = 'rotateY(' + angle + 'deg)';
+        });
 
-            // Show CTA at end
-            if (cta && progress >= 0.9) {
+        if (cta) {
+            if (progress >= 0.88) {
                 cta.style.opacity = '1';
                 cta.style.transform = 'translateY(0)';
+            } else {
+                cta.style.opacity = '0';
+                cta.style.transform = 'translateY(16px)';
             }
         }
-    });
+    }
+
+    // Listen on both native scroll and Lenis
+    window.addEventListener('scroll', updateEbook, { passive: true });
+    if (window.lenis) {
+        window.lenis.on('scroll', updateEbook);
+    } else {
+        // Fallback: hook into lenis after it initialises
+        document.addEventListener('lenis-init', () => {
+            if (window.lenis) window.lenis.on('scroll', updateEbook);
+        });
+    }
+
+    // Initial call
+    updateEbook();
 })();
