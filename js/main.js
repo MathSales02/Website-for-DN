@@ -1039,17 +1039,11 @@
         }
     }
 
-    // Listen on both native scroll and Lenis
-    window.addEventListener('scroll', updateEbook, { passive: true });
-    if (window.lenis) {
-        window.lenis.on('scroll', updateEbook);
-    } else {
-        // Fallback: hook into lenis after it initialises
-        document.addEventListener('lenis-init', () => {
-            if (window.lenis) window.lenis.on('scroll', updateEbook);
-        });
+    // RAF loop — works regardless of Lenis or native scroll
+    function rafLoop() {
+        updateEbook();
+        requestAnimationFrame(rafLoop);
     }
+    requestAnimationFrame(rafLoop);
 
-    // Initial call
-    updateEbook();
 })();
