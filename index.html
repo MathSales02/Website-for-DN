@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>INSTITUTIONAL | Agência DN</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "primary-fixed-dim": "#2f6b65",
+                        "tertiary-fixed": "#ffdad5",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-variant": "#353534",
+                        "surface": "#131313",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#76231b",
+                        "secondary-fixed-dim": "#6bd8cb",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#131313",
+                        "secondary-fixed": "#89f5e7",
+                        "on-tertiary": "#60130d",
+                        "primary": "#2f6b65",
+                        "inverse-primary": "#006e2f",
+                        "on-secondary-container": "#00302b",
+                        "primary-container": "#2f6b65",
+                        "secondary-container": "#29a195",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "surface-tint": "#2f6b65",
+                        "on-surface-variant": "#bccbb9",
+                        "on-secondary-fixed-variant": "#005049",
+                        "primary-fixed": "#2f6b65",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#ffb5ab",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#ff8b7c",
+                        "outline-variant": "#3d4a3d",
+                        "on-tertiary-fixed": "#410001",
+                        "on-background": "#e5e2e1",
+                        "on-secondary": "#003732",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed": "#002109",
+                        "on-primary-fixed-variant": "#005021",
+                        "on-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed": "#00201d",
+                        "outline": "#869585",
+                        "secondary": "#6bd8cb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-xl": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                    },
+                    "keyframes": {
+                        "marquee": {
+                            "0%": { "transform": "translateX(0)" },
+                            "100%": { "transform": "translateX(-100%)" }
+                        }
+                    },
+                    "animation": {
+                        "marquee-infinite": "marquee 20s linear infinite"
+                    }
+                },
+            },
+        }
+    </script>
+    <!DOCTYPE html>
+
+    <html class="dark" lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>INSTITUTIONAL | Agência DN</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;600&amp;display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+            rel="stylesheet" />
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        "colors": {
+                            "on-primary-container": "#ffffff",
+                            "on-tertiary-fixed-variant": "#7f2a21",
+                            "primary-fixed-dim": "#2f6b65",
+                            "tertiary-fixed": "#ffdad5",
+                            "error-container": "#93000a",
+                            "tertiary-fixed-dim": "#ffb4a9",
+                            "surface-variant": "#353534",
+                            "surface": "#131313",
+                            "on-error": "#690005",
+                            "on-tertiary-container": "#76231b",
+                            "secondary-fixed-dim": "#6bd8cb",
+                            "surface-bright": "#3a3939",
+                            "surface-dim": "#131313",
+                            "secondary-fixed": "#89f5e7",
+                            "on-tertiary": "#60130d",
+                            "primary": "#2f6b65",
+                            "inverse-primary": "#006e2f",
+                            "on-secondary-container": "#00302b",
+                            "primary-container": "#2f6b65",
+                            "secondary-container": "#29a195",
+                            "error": "#ffb4ab",
+                            "on-error-container": "#ffdad6",
+                            "surface-container-high": "#2a2a2a",
+                            "surface-container-highest": "#353534",
+                            "surface-tint": "#2f6b65",
+                            "on-surface-variant": "#bccbb9",
+                            "on-secondary-fixed-variant": "#005049",
+                            "primary-fixed": "#2f6b65",
+                            "on-primary": "#ffffff",
+                            "tertiary": "#ffb5ab",
+                            "inverse-surface": "#e5e2e1",
+                            "tertiary-container": "#ff8b7c",
+                            "outline-variant": "#3d4a3d",
+                            "on-tertiary-fixed": "#410001",
+                            "on-background": "#e5e2e1",
+                            "on-secondary": "#003732",
+                            "surface-container-lowest": "#0e0e0e",
+                            "on-primary-fixed": "#002109",
+                            "on-primary-fixed-variant": "#005021",
+                            "on-surface": "#e5e2e1",
+                            "background": "#131313",
+                            "surface-container-low": "#1c1b1b",
+                            "surface-container": "#201f1f",
+                            "inverse-on-surface": "#313030",
+                            "on-secondary-fixed": "#00201d",
+                            "outline": "#869585",
+                            "secondary": "#6bd8cb"
+                        },
+                        "borderRadius": {
+                            "DEFAULT": "1rem",
+                            "lg": "2rem",
+                            "xl": "3rem",
+                            "full": "9999px"
+                        },
+                        "fontFamily": {
+                            "label-sm": ["Inter"],
+                            "headline-lg": ["Space Grotesk"],
+                            "body-lg": ["Manrope"],
+                            "body-md": ["Manrope"],
+                            "display-xl": ["Space Grotesk"],
+                            "headline-md": ["Space Grotesk"]
+                        },
+                        "fontSize": {
+                            "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                            "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500" }],
+                            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                            "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600" }],
+                            "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }]
+                        }
+                    },
+                },
+            }
+        </script>
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+<body class="font-body-md bg-background selection:bg-primary selection:text-on-primary">
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"
+        class="fixed w-3 h-3 bg-primary rounded-full pointer-events-none z-[9999] mix-blend-screen transition-transform duration-100 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+    </div>
+    <div id="cursor-follower"
+        class="fixed w-10 h-10 border border-primary/50 rounded-full pointer-events-none z-[9998] transition-all duration-300 ease-out -translate-x-1/2 -translate-y-1/2 hidden lg:block">
+    </div>
+
+    <div class="bg-mesh"></div>
+
+
+
+    <!-- Navigation Shell -->
+    <header
+        class="fixed top-0 left-0 right-0 z-[60] flex justify-between items-center px-4 md:px-8 py-4 bg-white/5 dark:bg-black/20 backdrop-blur-xl rounded-full mt-4 md:mt-6 mx-auto w-[95%] max-w-7xl border border-white/10 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
+        <div class="flex items-center">
+            <img src="img/logodn.png" alt="Logo" class="h-10 w-auto">
+        </div>
+        <nav class="hidden md:flex gap-4 items-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <a class="relative group font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-green-400 dark:text-[#22C55E] px-4 py-2"
+                href="#">
+                <span class="relative z-10 border-b-2 border-[#22C55E] pb-1">Inicio</span>
+                <div
+                    class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
+                </div>
+            </a>
+            <a class="relative group font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-white/70 hover:text-white transition-colors duration-300 px-4 py-2"
+                href="#">
+                <span class="relative z-10">Serviços</span>
+                <div
+                    class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
+                </div>
+            </a>
+            <a class="relative group font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-white/70 hover:text-white transition-colors duration-300 px-4 py-2"
+                href="#">
+                <span class="relative z-10">Beneficios</span>
+                <div
+                    class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
+                </div>
+            </a>
+            <a class="relative group font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-white/70 hover:text-white transition-colors duration-300 px-4 py-2"
+                href="#">
+                <span class="relative z-10">Contato</span>
+                <div
+                    class="absolute inset-0 bg-primary/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
+                </div>
+            </a>
+        </nav>
+        <div class="flex items-center gap-4">
+            <button
+                class="hidden lg:block text-white/70 font-['Space_Grotesk'] text-sm uppercase font-bold hover:text-white transition-colors">Blog</button>
+            <button
+                class="hidden md:block bg-primary text-on-primary font-['Space_Grotesk'] px-6 py-2.5 rounded-full text-sm uppercase font-bold hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all scale-95 active:scale-90 duration-300">
+                Nosso E-BOOK
+            </button>
+            <!-- Hamburger Button (Mobile) -->
+            <button id="mobile-menu-btn"
+                class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 z-[60] relative">
+                <div class="w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="hamburger-line-1"></div>
+                <div class="w-6 h-0.5 bg-white transition-all duration-300 origin-center" id="hamburger-line-2"></div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-[#0e0e0e]/95 backdrop-blur-xl z-[55] flex-col items-center justify-center hidden opacity-0">
+        <nav class="flex flex-col gap-8 text-center mt-20">
+            <a class="mobile-nav-link font-display-xl text-4xl text-white uppercase" href="#">Inicio</a>
+            <a class="mobile-nav-link font-display-xl text-4xl text-white/70 uppercase" href="#">Serviços</a>
+            <a class="mobile-nav-link font-display-xl text-4xl text-white/70 uppercase" href="#">Beneficios</a>
+            <a class="mobile-nav-link font-display-xl text-4xl text-white/70 uppercase" href="#">Contato</a>
+            <a class="mobile-nav-link font-display-xl text-4xl text-primary uppercase mt-4" href="#">Nosso E-BOOK</a>
+        </nav>
+    </div>
+    <main class="bg-background relative z-10">
+        <!-- Hero Section (Glassmorphism Trust) -->
+        <section id="hero-geometric"
+            class="relative w-full min-h-screen bg-[#0e0e0e] text-white overflow-x-hidden flex items-center pt-28 pb-16 px-4">
+
+            <!-- Intro Sequence Overlay -->
+            <div id="intro-sequence"
+                class="absolute inset-0 z-[100] flex flex-col items-center justify-center bg-[#0e0e0e]/80 backdrop-blur-sm pointer-events-none">
+                <div id="intro-text-container"
+                    class="absolute inset-0 flex flex-col items-center justify-center px-4 z-20 text-center">
+                    <h2 class="font-display-xl text-3xl md:text-5xl text-white mb-4 opacity-0 translate-y-10">Pare de
+                        perder leads.</h2>
+                    <h1 class="font-display-xl text-5xl md:text-8xl text-primary italic opacity-0 translate-y-10">Comece
+                        a converter.</h1>
+                </div>
+
+                <div
+                    class="flex items-center justify-center w-full h-full relative z-10 pointer-events-none mix-blend-screen">
+                    <img id="intro-logo" src="img/logodn.png" alt="Agência DN"
+                        class="w-64 max-w-[80vw] object-contain opacity-0 grayscale contrast-200"
+                        style="filter: drop-shadow(0 0 20px rgba(47,107,101,0.5)); transform-origin: center center;">
+                </div>
+
+                <div id="intro-scroll-indicator"
+                    class="scroll-indicator absolute bottom-12 flex flex-col items-center opacity-0 z-30">
+                    <span class="text-on-surface-variant text-xs font-label-sm uppercase tracking-widest mb-4">Role para
+                        iniciar</span>
+                    <div class="w-[1px] h-16 bg-white/20 relative overflow-hidden">
+                        <div class="w-full h-full bg-primary absolute top-0 left-0 animate-scroll-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Background image -->
+            <div class="absolute inset-0 z-0 bg-cover bg-center opacity-25" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+                       mask-image:linear-gradient(180deg,transparent,black 10%,black 75%,transparent);
+                       -webkit-mask-image:linear-gradient(180deg,transparent,black 10%,black 75%,transparent);">
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                    <!-- LEFT COLUMN -->
+                    <div class="lg:col-span-7 flex flex-col space-y-8">
+
+                        <!-- Badge -->
+                        <div class="gm-fade gm-d1">
+                            <div
+                                class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-md hover:bg-white/10 transition-colors">
+                                <span class="flex h-2 w-2 rounded-full bg-rose-500/80 animate-pulse"></span>
+                                <span class="text-xs font-semibold uppercase tracking-wider text-zinc-300">Agência de
+                                    Marketing Digital</span>
+                            </div>
+                        </div>
+
+                        <!-- Heading -->
+                        <h1
+                            class="gm-fade gm-d2 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium tracking-tighter leading-[1.15]">
+                            Transforme<br>
+                            <span
+                                class="gm-fade-down bg-gradient-to-r from-primary via-white/90 to-secondary bg-clip-text text-transparent italic">cliques
+                                em clientes</span>
+                        </h1>
+
+                        <!-- Description -->
+                        <p class="gm-fade gm-d3 max-w-xl text-lg text-zinc-400 leading-relaxed font-light">
+                            Criamos estratégias, sites e automações que geram leads todos os dias para o seu negócio.
+                        </p>
+
+                        <!-- CTAs -->
+                        <div class="gm-fade gm-d4 flex flex-col sm:flex-row gap-4">
+                            <button
+                                class="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-on-primary transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,197,94,0.35)] active:scale-[0.98]">
+                                Fale com um especialista
+                                <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm font-bold text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/20 transition-colors">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                    <polygon points="5 3 19 12 5 21 5 3" />
+                                </svg>
+                                Ver Portfólio
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="lg:col-span-5 flex flex-col gap-6 lg:mt-8">
+
+                        <!-- Stats Card -->
+                        <div
+                            class="gm-fade gm-d5 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl">
+                            <div
+                                class="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-primary/10 blur-3xl pointer-events-none">
+                            </div>
+                            <div class="relative z-10">
+                                <!-- Header stat -->
+                                <div class="flex items-center gap-4 mb-8">
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/20">
+                                        <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <circle cx="12" cy="12" r="6" />
+                                            <circle cx="12" cy="12" r="2" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div class="text-3xl font-bold text-white">200+</div>
+                                        <div class="text-sm text-zinc-400">Projetos Entregues</div>
+                                    </div>
+                                </div>
+                                <!-- Progress -->
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex justify-between text-sm">
+                                        <span class="text-zinc-400">Satisfação dos Clientes</span>
+                                        <span class="text-white font-medium">98%</span>
+                                    </div>
+                                    <div class="h-2 w-full overflow-hidden rounded-full bg-zinc-800/50">
+                                        <div
+                                            class="h-full w-[98%] rounded-full bg-gradient-to-r from-primary/60 to-primary">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-px w-full bg-white/10 mb-6"></div>
+                                <!-- Mini stats -->
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div
+                                        class="flex flex-col items-center hover:-translate-y-1 transition-transform cursor-default">
+                                        <span class="text-2xl font-bold text-white">5+</span>
+                                        <span class="text-[10px] uppercase tracking-wider text-zinc-500">Anos</span>
+                                    </div>
+                                    <div class="w-px bg-white/10 mx-auto"></div>
+                                    <div
+                                        class="flex flex-col items-center hover:-translate-y-1 transition-transform cursor-default">
+                                        <span class="text-2xl font-bold text-white">24/7</span>
+                                        <span class="text-[10px] uppercase tracking-wider text-zinc-500">Suporte</span>
+                                    </div>
+                                    <div class="w-px bg-white/10 mx-auto"></div>
+                                    <div
+                                        class="flex flex-col items-center hover:-translate-y-1 transition-transform cursor-default">
+                                        <span class="text-2xl font-bold text-white">100%</span>
+                                        <span
+                                            class="text-[10px] uppercase tracking-wider text-zinc-500">Qualidade</span>
+                                    </div>
+                                </div>
+                                <!-- Pills -->
+                                <div class="mt-8 flex flex-wrap gap-2">
+                                    <div
+                                        class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium tracking-wide text-zinc-300">
+                                        <span class="relative flex h-2 w-2">
+                                            <span
+                                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                        </span>
+                                        ATENDIMENTO ATIVO
+                                    </div>
+                                    <div
+                                        class="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-medium tracking-wide text-zinc-300">
+                                        <svg class="w-3 h-3 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24">
+                                            <polygon
+                                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                        </svg>
+                                        AGÊNCIA PREMIUM
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marquee Card -->
+                        <div
+                            class="gm-fade gm-d5 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 py-8 backdrop-blur-xl">
+                            <p class="mb-5 px-8 text-sm font-medium text-zinc-400">Aprovado por líderes do mercado</p>
+                            <div class="relative flex overflow-hidden"
+                                style="mask-image:linear-gradient(to right,transparent,black 20%,black 80%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 20%,black 80%,transparent);">
+                                <div class="gm-marquee flex gap-10 whitespace-nowrap px-4">
+                                    <!-- items x2 for seamless loop -->
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">JJ Moto Peças</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">Connect Imoveis</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                                            <path d="M8 21h8M12 17v4" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">Serpa Painting Company</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">XStream Plumbers & Heating</span>
+                                    </div>
+                                    <!-- repeat -->
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path
+                                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">HVAC Cabuloso</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">PrimeCar Veiculos</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                                            <path d="M8 21h8M12 17v4" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">Deck Piscinas</span>
+                                    </div>
+                                    <div
+                                        class="flex items-center gap-2 opacity-50 hover:opacity-100 hover:scale-105 transition-all cursor-default grayscale hover:grayscale-0">
+                                        <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                        </svg>
+                                        <span class="text-base font-bold text-white">Dentista para todos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION: Transformamos sua Marca (Image Comparison) -->
+        <section id="transformamos-marca" class="py-24 px-4 md:px-8 bg-[#0e0e0e] overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-16">
+                    <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Antes &amp;
+                        Depois</span>
+                    <h2 class="font-headline-lg text-4xl md:text-6xl text-white mb-6">Transformamos sua <span
+                            class="text-primary italic">marca</span></h2>
+                    <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Veja a diferença que a Agência D'
+                        Negócios faz. Arraste o slider para comparar o antes e o depois.</p>
+                </div>
+
+                <!-- Image Comparison Slider -->
+                <div class="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                    style="aspect-ratio: 16/9;" id="img-comparison-wrapper">
+
+                    <!-- BEFORE image (left) -->
+                    <img id="img-before" src="img/antes.png" alt="Antes — site antigo"
+                        class="absolute inset-0 w-full h-full object-cover object-top"
+                        style="clip-path: inset(0 50% 0 0);" />
+
+                    <!-- AFTER image (right) -->
+                    <img id="img-after" src="img/depois.png" alt="Depois — site novo"
+                        class="absolute inset-0 w-full h-full object-cover object-top"
+                        style="clip-path: inset(0 0 0 50%);" />
+
+                    <!-- Labels -->
+                    <div
+                        class="absolute top-4 left-4 z-20 px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest border border-white/20">
+                        Antes</div>
+                    <div
+                        class="absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-primary/80 backdrop-blur-sm text-black text-xs font-bold uppercase tracking-widest">
+                        Depois</div>
+
+                    <!-- Divider line -->
+                    <div id="img-divider" class="absolute top-0 bottom-0 z-10 flex items-center justify-center"
+                        style="left: 50%; transform: translateX(-50%); cursor: ew-resize; width: 48px;">
+                        <!-- Line -->
+                        <div
+                            class="absolute top-0 bottom-0 w-0.5 bg-white/60 backdrop-blur-sm left-1/2 -translate-x-1/2">
+                        </div>
+                        <!-- Handle -->
+                        <div
+                            class="relative z-10 w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-caption -->
+                <p class="text-center text-on-surface-variant text-sm mt-6 opacity-60">↔ Arraste para comparar</p>
+            </div>
+        </section>
+
+
+
+        <!-- Horizontal Scroll Section (Destaques) -->
+        <section id="horizontal-scroll-container"
+            class="relative w-full h-screen overflow-hidden bg-surface-container-lowest">
+            <div class="absolute top-24 left-4 md:left-16 z-20">
+                <h2 class="font-headline-lg text-3xl md:text-6xl text-white">Trabalhos em Destaque</h2>
+                <div class="h-1 w-24 bg-primary mt-4"></div>
+            </div>
+
+            <div id="horizontal-panels" class="flex h-full w-[400vw]">
+                <!-- Panel 1 -->
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 1" />
+                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
+                        <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Projeto
+                            Alpha</span>
+                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">Plataforma Fintech</h3>
+                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Redesenhamos a experiência
+                            de investimentos para
+                            a nova geração, focado em velocidade extrema e conversão.</p>
+                    </div>
+                </div>
+                <!-- Panel 2 -->
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 2" />
+                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
+                        <span class="text-secondary font-label-sm uppercase tracking-widest mb-4 block">Projeto
+                            Beta</span>
+                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">App de Saúde AI</h3>
+                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Interface limpa e preditiva
+                            para diagnóstico
+                            rápido apoiado por inteligência artificial institucional.</p>
+                    </div>
+                </div>
+                <!-- Panel 3 -->
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
+                    <img src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=2070&auto=format&fit=crop"
+                        class="w-full h-full object-cover opacity-30 absolute inset-0 z-0" alt="Work 3" />
+                    <div class="relative z-10 glass-card p-6 md:p-12 rounded-2xl max-w-3xl w-full translate-y-10">
+                        <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Projeto
+                            Gamma</span>
+                        <h3 class="font-display-xl text-4xl md:text-7xl text-white mb-6">E-commerce de Luxo</h3>
+                        <p class="font-body-lg text-sm md:text-base text-on-surface-variant">Uma experiência de compra
+                            imersiva com modelos
+                            3D interativos e checkout instantâneo de 1 clique.</p>
+                    </div>
+                </div>
+                <!-- Panel 4 (End) -->
+                <div class="panel w-screen h-full flex items-center justify-center p-4 md:p-8 relative">
+                    <h2 class="font-display-xl text-4xl md:text-9xl text-white text-center">Inovação<br /><span
+                            class="text-primary italic">Sem Limites.</span></h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- Globe Section (Atendemos o mundo todo) -->
+        <section id="globe-section"
+            class="relative w-full h-screen flex items-center justify-center overflow-hidden z-10">
+            <!-- The expanding white background -->
+            <div id="globe-bg" class="absolute inset-0 bg-white" style="clip-path: circle(0% at center);"></div>
+
+            <!-- Content -->
+            <div id="globe-content"
+                class="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center justify-between gap-12 opacity-0">
+                <div class="lg:w-5/12 text-black flex flex-col justify-center">
+                    <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Alcance Global</span>
+                    <h2 class="font-headline-lg text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                        Atendemos o <br><span class="text-primary italic">mundo todo.</span></h2>
+                    <p class="font-body-lg text-xl text-gray-600 mb-8 max-w-lg">
+                        Nossa expertise cruza fronteiras. Criamos experiências digitais premium e estratégias de alta
+                        performance que conectam marcas a clientes em qualquer lugar do planeta.
+                    </p>
+
+                    <div class="mb-10">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Presença Global</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">EUA</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">Canadá</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">Espanha</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">Itália</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">Tóquio</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">Londres</span>
+                            <span
+                                class="px-3 py-1.5 rounded-full border border-gray-200 text-xs font-bold text-gray-700 bg-gray-50/50 cursor-default transition hover:border-primary hover:text-primary">São
+                                Paulo</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-8 md:gap-12">
+                        <div class="flex flex-col">
+                            <span class="text-4xl md:text-5xl font-bold text-black">14+</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold mt-2">Países</span>
+                        </div>
+                        <div class="w-px bg-gray-200"></div>
+                        <div class="flex flex-col">
+                            <span class="text-4xl md:text-5xl font-bold text-black">24/7</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold mt-2">Operação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center w-full mt-10 lg:mt-0 relative">
+                    <!-- Network Orbit Container -->
+                    <div class="relative w-full aspect-square max-w-[600px] flex items-center justify-center">
+
+
+                        <!-- Concentric circles -->
+                        <div
+                            class="absolute w-[180px] h-[180px] sm:w-[240px] sm:h-[240px] rounded-full border border-dashed border-gray-300 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] rounded-full border border-dashed border-gray-300 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] rounded-full border border-dashed border-gray-200 pointer-events-none">
+                        </div>
+
+                        <!-- Center Node -->
+                        <div
+                            class="absolute w-20 h-20 sm:w-28 sm:h-28 bg-primary text-white rounded-full flex flex-col items-center justify-center shadow-[0_0_30px_rgba(47,107,101,0.4)] z-10">
+                            <svg class="w-6 h-6 sm:w-8 sm:h-8 mb-1" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                                </path>
+                            </svg>
+                            <span
+                                class="font-bold text-xs sm:text-sm leading-tight text-center">Alcance<br>Global</span>
+                        </div>
+
+                        <!-- Orbit 1 (2 nodes) -->
+                        <div class="absolute flex items-center justify-center node-orbit-1 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: 0s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> EUA
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-1 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -10s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Canadá
+                            </div>
+                        </div>
+
+                        <!-- Orbit 2 (3 nodes) -->
+                        <div class="absolute flex items-center justify-center node-orbit-2 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: 0s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Espanha
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-2 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -8.33s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Itália
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-2 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -16.66s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Londres
+                            </div>
+                        </div>
+
+                        <!-- Orbit 3 (4 nodes) -->
+                        <div class="absolute flex items-center justify-center node-orbit-3 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: 0s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Tóquio
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-3 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -7.5s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> São Paulo
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-3 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -15s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Dubai
+                            </div>
+                        </div>
+                        <div class="absolute flex items-center justify-center node-orbit-3 hover:scale-110 transition-transform duration-300 z-20 cursor-default"
+                            style="animation-delay: -22.5s;">
+                            <div
+                                class="bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg border border-gray-100 text-xs sm:text-sm font-bold text-gray-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Sydney
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits-section" class="py-40 px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-all duration-500">
+                        <span class="material-symbols-outlined text-primary group-hover:text-black"
+                            data-icon="precision_manufacturing">precision_manufacturing</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Estratégias que geram resultado real
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Nada de achismo. Cada ação é baseada em dados, análise de mercado e performance — focado em
+                        crescimento e faturamento.
+                    </p>
+                </div>
+                <!-- Benefit 2 -->
+                <div
+                    class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500 mt-8 lg:mt-12">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 border border-secondary/20 group-hover:bg-secondary transition-all duration-500">
+                        <span class="material-symbols-outlined text-secondary group-hover:text-black"
+                            data-icon="palette">palette</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Aumento previsível de vendas</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Criamos processos e funis que transformam visitantes em clientes, trazendo consistência e escala
+                        para o seu negócio.
+                    </p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 group-hover:bg-primary transition-all duration-500">
+                        <span class="material-symbols-outlined text-primary group-hover:text-black"
+                            data-icon="speed">speed</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Execução rápida e profissional</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Agilidade na entrega sem perder qualidade. Sua empresa evolui mais rápido enquanto a
+                        concorrência ainda está planejando.
+                    </p>
+                </div>
+                <!-- Benefit 4 -->
+                <div
+                    class="glass-card p-8 rounded-lg group hover:bg-white/[0.05] transition-all duration-500 mt-8 lg:mt-12">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 border border-secondary/20 group-hover:bg-secondary transition-all duration-500">
+                        <span class="material-symbols-outlined text-secondary group-hover:text-black"
+                            data-icon="lock">lock</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-white mb-4">Automação inteligente com IA</h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Implementamos automações e inteligência artificial para otimizar atendimento, marketing e vendas
+                        — menos esforço, mais resultado.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Marketing Quote Section -->
+        <section id="marketing-quote-section" class="relative py-32 px-8 overflow-hidden">
+            <!-- Background glow -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 blur-[120px] rounded-full">
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <!-- Decorative top line -->
+                <div id="mq-line"
+                    class="h-px w-0 bg-gradient-to-r from-transparent via-primary/60 to-transparent mx-auto mb-16">
+                </div>
+
+                <!-- Label -->
+                <p id="mq-label"
+                    class="text-center text-xs font-bold uppercase tracking-[0.35em] text-primary mb-8 opacity-0 translate-y-4">
+                    Marketing Digital · Estratégia · Resultado
+                </p>
+
+                <!-- Main quote -->
+                <div class="text-center relative py-4">
+                    <h2 id="mq-text"
+                        class="font-['Space_Grotesk'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight text-white">
+                        Quem não <span class="text-primary italic">aparece</span>,<br>
+                        não <span class="text-gradient">vende.</span>
+                    </h2>
+                </div>
+
+                <!-- Sub-phrase -->
+                <p id="mq-sub"
+                    class="text-center text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mt-10 leading-relaxed opacity-0 translate-y-4">
+                    Presença digital não é opcional. É o diferencial entre empresas que crescem
+                    e empresas que ficam para trás.
+                </p>
+
+                <!-- Stats row -->
+                <div id="mq-stats" class="flex flex-wrap justify-center gap-12 mt-16 opacity-0 translate-y-4">
+                    <div id="mq-stat-1" class="text-center group cursor-default">
+                        <div
+                            class="text-4xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                            3x</div>
+                        <div class="text-xs uppercase tracking-widest text-zinc-500 mt-1">mais visibilidade</div>
+                    </div>
+                    <div class="w-px bg-white/10 self-stretch"></div>
+                    <div id="mq-stat-2" class="text-center group cursor-default">
+                        <div
+                            class="text-4xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                            60%</div>
+                        <div class="text-xs uppercase tracking-widest text-zinc-500 mt-1">redução de custo por lead
+                        </div>
+                    </div>
+                    <div class="w-px bg-white/10 self-stretch"></div>
+                    <div id="mq-stat-3" class="text-center group cursor-default">
+                        <div
+                            class="text-4xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                            10x</div>
+                        <div class="text-xs uppercase tracking-widest text-zinc-500 mt-1">ROI médio dos clientes</div>
+                    </div>
+                </div>
+
+                <!-- Decorative bottom line -->
+                <div id="mq-line-bottom"
+                    class="h-px w-0 bg-gradient-to-r from-transparent via-primary/40 to-transparent mx-auto mt-16">
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Services Grid -->
+        <section id="services-section" class="py-40 px-8 bg-surface-container-lowest/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-24">
+                    <h2 class="font-headline-lg text-headline-lg text-white mb-6">Nossas Estratégias</h2>
+                    <div class="h-1 w-24 bg-primary"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Service 1 -->
+                    <div class="relative overflow-hidden rounded-lg glass-card group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="p-12 relative z-10">
+                            <span class="text-primary font-label-sm mb-6 block">01 / Tráfego Pago</span>
+                            <h3 class="font-display-xl text-headline-lg text-white mb-8">Atraia clientes todos os dias
+                            </h3>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                                Criamos e gerenciamos campanhas no Google, Instagram e Facebook para gerar leads
+                                qualificados e vendas constantes.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">Google
+                                    ADS</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">Meta
+                                    ADS</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">Leads
+                                    Qualificados</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="relative overflow-hidden rounded-lg glass-card group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="p-12 relative z-10">
+                            <span class="text-secondary font-label-sm mb-6 block">02 / Social Media & Branding</span>
+                            <h3 class="font-display-xl text-headline-lg text-white mb-8">Sua marca forte e posicionada
+                            </h3>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                                Desenvolvemos conteúdos estratégicos que aumentam autoridade, engajamento e
+                                reconhecimento no mercado.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">UX
+                                    Strategy</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">Visual
+                                    Identity</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">Motion
+                                    Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="relative overflow-hidden rounded-lg glass-card group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="p-12 relative z-10">
+                            <span class="text-primary font-label-sm mb-6 block">03 / Criação de Sites e Landing
+                                Pages</span>
+                            <h3 class="font-display-xl text-headline-lg text-white mb-8">Seu site que realmente converte
+                            </h3>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                                Criamos páginas rápidas, modernas e pensadas para transformar visitantes em clientes.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">LANDING
+                                    PAGE</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">HIGH
+                                    CONVERSION</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">RESPONSIVO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="relative overflow-hidden rounded-lg glass-card group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="p-12 relative z-10">
+                            <span class="text-secondary font-label-sm mb-6 block">04 / Automação & Chatbot com IA</span>
+                            <h3 class="font-display-xl text-headline-lg text-white mb-8">Atenda e venda no automático
+                            </h3>
+                            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                                Implementamos sistemas inteligentes que respondem clientes, qualificam leads e aumentam
+                                suas vendas 24h por dia.
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">CHATBOT
+                                    IA</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">AUTOMAÇÃO</span>
+                                <span
+                                    class="px-4 py-1.5 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest bg-white/5">WHATSAPP
+                                    API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solicitar Orçamento Button -->
+                <div class="mt-20 flex justify-center service-btn-fade opacity-0 translate-y-10">
+                    <a href="#"
+                        class="inline-flex items-center justify-center bg-primary text-on-primary font-['Space_Grotesk'] px-8 py-4 rounded-full text-sm md:text-lg uppercase font-bold hover:shadow-[0_0_30px_rgba(47,107,101,0.6)] transition-all hover:scale-105 active:scale-95 duration-300">
+                        Solicitar orçamento
+                        <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Timeline Section -->
+        <section id="about-timeline-section"
+            class="relative w-full h-screen bg-surface overflow-hidden flex items-center py-20">
+            <!-- Title -->
+            <div class="absolute top-16 left-0 w-full text-center z-10 px-4">
+                <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Nossa História</span>
+                <h2 class="font-headline-lg text-4xl md:text-5xl text-white">Sobre Nós</h2>
+            </div>
+
+            <div class="max-w-5xl mx-auto w-full h-[65vh] relative px-8 mt-24">
+                <!-- Line -->
+                <div class="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white/5 rounded-full">
+                    <div id="timeline-progress" class="w-full bg-primary h-0 rounded-full relative">
+                        <!-- Dot -->
+                        <div id="timeline-dot"
+                            class="absolute left-1/2 -translate-x-1/2 bottom-0 w-6 h-6 bg-primary rounded-full shadow-[0_0_20px_rgba(47,107,101,1)] border-4 border-surface translate-y-1/2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Items container -->
+                <div class="w-full h-full relative">
+                    <!-- Item 1 -->
+                    <div
+                        class="timeline-item absolute top-[10%] left-16 md:left-0 md:w-[45%] md:text-right opacity-0 md:pr-12">
+                        <h3
+                            class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-auto md:right-12 pointer-events-none">
+                            2018</h3>
+                        <h4 class="text-2xl text-primary font-bold relative z-10">O Início</h4>
+                        <p class="text-on-surface-variant mt-3 text-sm md:text-base leading-relaxed relative z-10">
+                            Fundamos a Agência DN com um propósito claro: revolucionar o marketing digital através de
+                            estratégias focadas em dados e resultados reais.</p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline-item absolute top-[35%] left-16 md:left-[55%] md:w-[45%] opacity-0 md:pl-12">
+                        <h3
+                            class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-12 pointer-events-none">
+                            2020</h3>
+                        <h4 class="text-2xl text-primary font-bold relative z-10">Expansão e Metodologia</h4>
+                        <p class="text-on-surface-variant mt-3 text-sm md:text-base leading-relaxed relative z-10">Com o
+                            crescimento rápido, consolidamos nossa própria metodologia de atração e conversão, atendendo
+                            mais de 50 marcas simultaneamente.</p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div
+                        class="timeline-item absolute top-[60%] left-16 md:left-0 md:w-[45%] md:text-right opacity-0 md:pr-12">
+                        <h3
+                            class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-auto md:right-12 pointer-events-none">
+                            2023</h3>
+                        <h4 class="text-2xl text-primary font-bold relative z-10">Inovação Tecnológica</h4>
+                        <p class="text-on-surface-variant mt-3 text-sm md:text-base leading-relaxed relative z-10">
+                            Integramos inteligência artificial avançada nos nossos processos criativos e analíticos,
+                            reduzindo significativamente o custo de aquisição dos nossos clientes.</p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="timeline-item absolute top-[85%] left-16 md:left-[55%] md:w-[45%] opacity-0 md:pl-12">
+                        <h3
+                            class="text-5xl md:text-6xl text-white font-bold opacity-5 absolute -top-8 left-0 md:left-12 pointer-events-none">
+                            Hoje</h3>
+                        <h4 class="text-2xl text-primary font-bold relative z-10">Presença Global</h4>
+                        <p class="text-on-surface-variant mt-3 text-sm md:text-base leading-relaxed relative z-10">
+                            Operamos 24/7 com parceiros internacionais, entregando um ecossistema completo de soluções
+                            digitais de altíssima performance para grandes players.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-40 px-8 max-w-7xl mx-auto overflow-hidden">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <span class="text-primary font-label-sm uppercase tracking-widest mb-4 block">Depoimentos</span>
+                    <h2 class="font-headline-lg text-headline-lg text-white">O que falam de nós</h2>
+                </div>
+                <div class="flex gap-4">
+                    <button
+                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white">
+                        <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:border-primary transition-colors text-white">
+                        <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar">
+                <!-- Testimonial 1 -->
+                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
+                            <img alt="Marcus Thorne" class="w-full h-full object-cover"
+                                data-alt="Close up portrait of a middle-aged male executive in a sharp black suit with professional lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOyvw61MG5QQaqobxEqp8q1Du1r7URExLJhpkRnZlZ9T4TKqesi1VrWULuXrJ5kxPqblCHhlO4W2o7QZDs_DLb0A_BMBNxW8cO6CKsHiqEQy0DpIZXw7n60_17nys_0QMtFAkV12LVqXB7QtQVhwjoSNWaPd6yFHEu6BK-jBoUB75lfBAegtblas7WRmo9eOyMUMoTTGfhE5o7unENCQf7zEWO3AzgBz_mq7bv6wUQhIZlQzS5I2fQRLDAmiy-CjXrC2fwxi8g_WI" />
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-sm font-bold text-white">Marcus Thorne</h4>
+                            <p class="text-xs text-primary font-bold uppercase tracking-tighter">CTO, Vertex Global</p>
+                        </div>
+                    </div>
+                    <p class="font-body-lg italic text-white/90">
+                        "The level of technical sophistication Institutional brought to our infrastructure overhaul was
+                        unprecedented. They don't just build; they architect futures."
+                    </p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
+                            <img alt="Sarah Jenkins" class="w-full h-full object-cover"
+                                data-alt="Professional headshot of a woman in her 30s with confident expression and minimalist office background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA--O8fl_1dLrn9U6_e7QvLonXkx8ji6YV04CDZu6RmoLrxSmH2pSQ3mZnZjMOqPA4qG1JHrGAZ9tjOlfst_t_ViE0OtJglTlXkVBupC11xp6GfN06guGA7leM6o-1dILGdnxrakm1SOsEIxeT319Hs3HBOdIu_efDGtlNFldKC94X7Km2-YcerHzE4cvWppeLVslt0PxzN5oKv2H4_gcULAPAFDmH_UTb0upnSC5dZLZgcwvbgVJN1CC5paDA6tCC4E35vD3KhHp0" />
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-sm font-bold text-white">Gabriel Henrique</h4>
+                            <p class="text-xs text-primary font-bold uppercase tracking-tighter"> Design</p>
+                        </div>
+                    </div>
+                    <p class="font-body-lg italic text-white/90">
+                        "Empresa que eu posso confiar de olhos fechados"
+                    </p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="min-w-[400px] glass-card p-12 rounded-lg snap-start">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white/10">
+                            <img alt="David Chen" class="w-full h-full object-cover"
+                                data-alt="Portrait of a young tech entrepreneur with creative studio background and warm soft lighting"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTF0904YZ0gkp9ahS8C4Y7fckmoWjuVdey1UtAHikRomhMNh6FY2IHd7UkZUI4cRw197ysW-qbr4VRfcuO4vssaFh_22jaV1HxhD8_PDIa56ByYYIJisb3LeUY17MLB3OHg2Ks9g40SpU-FuYW5Zab9KLOlLcQ1pW6XFq-wbfL3Zvq-W8txPOIlUeZlKjKG6L4huD0aGv28O1q5nnDrnFB2Pf2sgiv3sG6vPIuYmIa8VNkNRCoYsKyRnZGgEclXdqqX8jd1upJJ-s" />
+                        </div>
+                        <div>
+                            <h4 class="font-headline-md text-sm font-bold text-white">David Chen</h4>
+                            <p class="text-xs text-primary font-bold uppercase tracking-tighter">Founder, Atmos Lab</p>
+                        </div>
+                    </div>
+                    <p class="font-body-lg italic text-white/90">
+                        "Exceptional delivery speed without a single compromise on quality. The high-fidelity prototype
+                        they produced became our primary fundraising tool."
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section id="faq-section" class="py-40 px-8 max-w-4xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-white mb-16 text-center">Dúvidas Frequentes</h2>
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <details class="glass-card rounded-lg overflow-hidden group">
+                    <summary
+                        class="list-none p-8 flex justify-between items-center cursor-pointer hover:bg-white/5 transition-colors">
+                        <span class="font-headline-md text-lg text-white">Como vocês garantem resultados rápidos?</span>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform"
+                            data-icon="expand_more">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-8 pb-8 text-on-surface-variant font-body-md overflow-hidden transition-all duration-300">
+                        Nós não dependemos de achismos. Utilizamos nossa metodologia proprietária baseada em dados,
+                        combinando tráfego pago de alta performance com design orientado à conversão. Nossos clientes
+                        costumam ver aumento no volume de leads logo nas primeiras 2 semanas.
+                    </div>
+                </details>
+                <!-- FAQ 2 -->
+                <details class="glass-card rounded-lg overflow-hidden group">
+                    <summary
+                        class="list-none p-8 flex justify-between items-center cursor-pointer hover:bg-white/5 transition-colors">
+                        <span class="font-headline-md text-lg text-white">Qual é o investimento inicial para o
+                            projeto?</span>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform"
+                            data-icon="expand_more">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-8 pb-8 text-on-surface-variant font-body-md overflow-hidden transition-all duration-300">
+                        Cada projeto é desenhado sob medida. Após nossa primeira sessão de diagnóstico, estruturamos o
+                        escopo ideal para sua realidade atual, seja apenas gestão de tráfego, seja uma reestruturação
+                        completa de posicionamento e site.
+                    </div>
+                </details>
+                <!-- FAQ 3 -->
+                <details class="glass-card rounded-lg overflow-hidden group">
+                    <summary
+                        class="list-none p-8 flex justify-between items-center cursor-pointer hover:bg-white/5 transition-colors">
+                        <span class="font-headline-md text-lg text-white">Como funciona o suporte e
+                            acompanhamento?</span>
+                        <span class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform"
+                            data-icon="expand_more">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-8 pb-8 text-on-surface-variant font-body-md overflow-hidden transition-all duration-300">
+                        Você terá um dashboard exclusivo para acompanhar suas métricas em tempo real. Além disso, temos
+                        reuniões quinzenais de alinhamento e um canal direto via WhatsApp para suporte e ajustes de rota
+                        rápidos.
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- Parallax Footer -->
+    <footer id="parallax-footer"
+        class="fixed bottom-0 left-0 w-full h-[80vh] flex flex-col justify-between bg-black z-[-1]">
+        <!-- Conteúdo Principal do Footer (CTA) -->
+        <div class="flex-grow flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
+            <!-- Glow background -->
+            <div
+                class="absolute inset-0 bg-primary/10 blur-[150px] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] opacity-50">
+            </div>
+
+            <h2 id="escalar-heading"
+                class="font-display-xl text-4xl sm:text-5xl md:text-[100px] text-white leading-none font-bold mb-6 tracking-tighter flex flex-col md:flex-row items-center md:items-end justify-center gap-2 md:gap-4 cursor-default group">
+                <span>VAMOS</span>
+                <span id="escalar-word" class="flex items-end text-primary pb-2">
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">E</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">S</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">C</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">A</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">L</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">A</span>
+                    <span
+                        class="stair-letter inline-block origin-bottom transition-colors group-hover:text-white">R</span>
+                    <span class="inline-block text-white">?</span>
+                </span>
+            </h2>
+            <p class="font-body-lg text-on-surface-variant max-w-lg mx-auto mb-12">
+                Pare de perder tempo com estratégias que não funcionam. Dê o próximo passo em direção à previsibilidade
+                e lucro.
+            </p>
+            <button
+                class="magnetic-btn bg-primary text-on-primary font-headline-md px-12 py-6 rounded-full text-lg font-bold hover:shadow-[0_0_50px_rgba(47,107,101,0.6)] transition-all flex items-center justify-center">
+                <span>Agendar Sessão Gratuita</span>
+                <span class="material-symbols-outlined ml-3" data-icon="arrow_forward">arrow_forward</span>
+            </button>
+        </div>
+
+        <!-- Footer Bottom Links -->
+        <div
+            class="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-8 pb-10 border-t border-white/10 pt-10">
+            <div class="mb-8 md:mb-0 text-center md:text-left">
+                <div class="text-xl font-bold text-white font-headline-lg tracking-tighter mb-2">AGÊNCIA D' NEGÓCIOS
+                </div>
+                <p class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-white/40">© 2024 Todos os
+                    direitos reservados.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="magnetic-btn font-['Space_Grotesk'] text-xs tracking-widest uppercase text-white/40 hover:text-primary transition-colors duration-300"
+                    href="#">Termos de Uso</a>
+                <a class="magnetic-btn font-['Space_Grotesk'] text-xs tracking-widest uppercase text-white/40 hover:text-primary transition-colors duration-300"
+                    href="#">Política de Privacidade</a>
+                <a class="magnetic-btn font-['Space_Grotesk'] text-xs tracking-widest uppercase text-white/40 hover:text-primary transition-colors duration-300"
+                    href="#">Instagram</a>
+                <a class="magnetic-btn font-['Space_Grotesk'] text-xs tracking-widest uppercase text-white/40 hover:text-primary transition-colors duration-300"
+                    href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- --- CHATBOT WIDGET --- -->
+    <div id="chat-widget-container">
+        <!-- Chatbot Window -->
+        <div id="dn-app-wrapper">
+            <!-- Botões Superiores Flutuantes -->
+            <div class="top-actions">
+                <button id="newChatBtn" class="top-btn" aria-label="Nova Conversa">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14" />
+                        <path d="M5 12h14" />
+                    </svg>
+                    <span class="btn-text">Nova Conversa</span>
+                </button>
+                <button id="historyBtn" class="top-btn" aria-label="Ver Histórico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                        <path d="M12 7v5l4 2" />
+                    </svg>
+                </button>
+            </div>
+
+            <button id="closeChatBtn" class="chat-close-btn" aria-label="Fechar Chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+
+            <!-- Fundo Animado -->
+            <div class="background-container">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+
+            <!-- Modal de Histórico -->
+            <div id="historyModal" class="chat-modal-overlay">
+                <div class="chat-modal-content">
+                    <div class="chat-modal-header">
+                        <h2>Histórico de Conversas</h2>
+                        <button id="closeHistoryBtn" class="chat-close-modal-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 6 6 18" />
+                                <path d="m6 6 12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="historyList" class="history-list">
+                        <!-- Itens serão injetados aqui -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container Principal -->
+            <main class="chat-app-container">
+                <!-- Estado Inicial -->
+                <div id="chat-hero-section" class="chat-hero-section">
+                    <div class="hero-header">
+                        <img src="https://agenciadnegocios.com/wp-content/uploads/2025/12/logodn-1-scaled.png"
+                            alt="Logo Agência D' Negócios" class="logo">
+                        <h1 class="hero-title">Como posso ajudar você a impulsionar seu negócio hoje?</h1>
+                        <div class="hero-divider"></div>
+                        <p class="hero-subtitle">Escreva uma mensagem ou escolha uma opção abaixo</p>
+                    </div>
+
+                    <div class="suggestions-container">
+                        <button class="suggestion-btn" onclick="window.setCommand('/consultoria')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                            </svg>
+                            <span>Consultoria</span>
+                        </button>
+                        <button class="suggestion-btn" onclick="window.setCommand('/marketing')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                            </svg>
+                            <span>Marketing</span>
+                        </button>
+                        <button class="suggestion-btn" onclick="window.setCommand('/vendas')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m3 3 3 9-3 9 19-9Z" />
+                            </svg>
+                            <span>Vendas</span>
+                        </button>
+                        <button class="suggestion-btn" onclick="window.setCommand('/suporte')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                            </svg>
+                            <span>Suporte</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat Box -->
+                <div id="chat-box" class="chat-box">
+                    <div class="msg bot">Olá! Tudo bem? Eu sou o Denis, assistente virtual da Agência D' Negócios. Como
+                        posso ajudar você a impulsionar seu negócio hoje?</div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-wrapper">
+                    <div class="input-container">
+                        <div class="textarea-wrapper">
+                            <textarea id="userInput" placeholder="Escreva aqui..." rows="1"></textarea>
+                        </div>
+                        <div class="input-actions">
+                            <div class="actions-left">
+                                <button class="icon-btn" id="micBtn" aria-label="Gravar áudio">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                                        <line x1="12" x2="12" y1="19" y2="22" />
+                                    </svg>
+                                </button>
+                                <div class="action-divider"></div>
+                                <div class="model-selector-inline">
+                                    <button id="modelToggle" class="model-toggle-inline" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <span id="currentModel">Denis Turbo</span>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            class="chevron">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+                                    <div id="modelMenu" class="model-menu-inline">
+                                        <div class="model-option active" data-model="turbo">
+                                            <div class="model-icon"><svg viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                                </svg></div>
+                                            <div class="model-info"><span class="model-name">Denis Turbo</span></div>
+                                            <svg class="check-icon" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
+                                        </div>
+                                        <div class="model-option" data-model="pro">
+                                            <div class="model-icon"><svg viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path
+                                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                                    <path d="M5 3v4" />
+                                                    <path d="M19 17v4" />
+                                                    <path d="M3 5h4" />
+                                                    <path d="M17 19h4" />
+                                                </svg></div>
+                                            <div class="model-info"><span class="model-name">Denis Pro</span></div>
+                                            <svg class="check-icon" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path d="M20 6 9 17l-5-5" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="sendBtn" class="send-btn" disabled>
+                                <span class="send-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="m22 2-7 20-4-9-9-4Z" />
+                                        <path d="M22 2 11 13" />
+                                    </svg></span>
+                                <span>Enviar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Overlay de Gravação -->
+            <div id="recordingLoader" class="recording-loader-overlay">
+                <div class="recording-loader">
+                    <span class="loader-letter" style="animation-delay: 0s">O</span>
+                    <span class="loader-letter" style="animation-delay: 0.1s">u</span>
+                    <span class="loader-letter" style="animation-delay: 0.2s">v</span>
+                    <span class="loader-letter" style="animation-delay: 0.3s">i</span>
+                    <span class="loader-letter" style="animation-delay: 0.4s">n</span>
+                    <span class="loader-letter" style="animation-delay: 0.5s">d</span>
+                    <span class="loader-letter" style="animation-delay: 0.6s">o</span>
+                    <span class="loader-letter" style="animation-delay: 0.7s">.</span>
+                    <span class="loader-letter" style="animation-delay: 0.8s">.</span>
+                    <span class="loader-letter" style="animation-delay: 0.9s">.</span>
+                    <div class="loader-circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Toggle Button -->
+        <button id="chat-widget-toggle" aria-label="Abrir Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+            </svg>
+        </button>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
