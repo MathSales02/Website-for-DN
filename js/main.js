@@ -937,58 +937,47 @@
 })()
 
 // ==========================================
-// E-Book Section Animation (GSAP pin + scrub)
+// E-Book Section Animation (slide from left)
 // ==========================================
 (function() {
-    const scene = document.getElementById('ebook-scene');
-    if (!scene) return;
+    const section = document.getElementById('ebook-section');
+    if (!section) return;
 
-    const book    = document.getElementById('ebook-book');
-    const bar     = document.getElementById('ebook-progress-bar');
-    const slides  = ['ebook-slide-0','ebook-slide-1','ebook-slide-2','ebook-slide-3','ebook-slide-cta']
-                        .map(id => document.getElementById(id));
+    const badge   = document.getElementById('eb-badge');
+    const title   = document.getElementById('eb-title');
+    const desc    = document.getElementById('eb-desc');
+    const bullets = section.querySelectorAll('.eb-bullet');
+    const cta     = document.getElementById('eb-cta');
+    const visual  = document.getElementById('eb-visual');
 
-    if (slides.some(s => !s)) return;
+    // Shared trigger config
+    const trigger = {
+        trigger: section,
+        start: 'top 72%',
+        once: true,
+    };
 
-    // Gentle float on the book (runs always)
-    if (book) {
-        gsap.to(book, { y: -14, duration: 2.8, ease: 'sine.inOut', repeat: -1, yoyo: true });
-    }
+    // Left-side elements: slide from left, staggered
+    const leftItems = [badge, title, desc, ...bullets, cta].filter(Boolean);
 
-    // Build the scrubbed timeline
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: scene,
-            start: 'top top',
-            end: '+=280%',        // 2.8 screen-heights of scroll
-            pin: true,
-            scrub: 1.2,
-            anticipatePin: 1,
-        }
+    gsap.from(leftItems, {
+        x: -70,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.12,
+        scrollTrigger: trigger,
     });
 
-    // Helper: cross-fade from one slide to next + tilt book
-    function crossFade(fromIdx, toIdx, bookRotateY) {
-        tl.to(slides[fromIdx], { opacity: 0, y: -28, duration: 0.6, ease: 'power2.in' })
-          .fromTo(slides[toIdx],
-                { opacity: 0, y: 32 },
-                { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '<0.2');
-
-        if (book) {
-            tl.to(book, { rotateY: bookRotateY, duration: 0.6, ease: 'power2.inOut' }, '<');
-        }
-        if (bar) {
-            const pct = (toIdx / (slides.length - 1)) * 100;
-            tl.to(bar, { width: pct + '%', duration: 0.6, ease: 'power2.inOut' }, '<');
-        }
-        // Pause between slides
-        tl.to({}, { duration: 0.8 });
+    // Right visual: slide from right
+    if (visual) {
+        gsap.from(visual, {
+            x: 60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            delay: 0.2,
+            scrollTrigger: trigger,
+        });
     }
-
-    // Intro → Ch01 → Ch02 → Ch03 → CTA
-    crossFade(0, 1, -28);
-    crossFade(1, 2, -34);
-    crossFade(2, 3, -40);
-    crossFade(3, 4, -20);
-
 })();
