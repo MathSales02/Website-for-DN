@@ -22,8 +22,8 @@
                     divider.addEventListener('mousedown', function (e) { isDragging = true; e.preventDefault(); });
                     wrapper.addEventListener('mousemove', function (e) { if (isDragging) setPosition(getPercent(e)); });
                     document.addEventListener('mouseup', function () { isDragging = false; });
-                    divider.addEventListener('touchstart', function (e) { isDragging = true; });
-                    wrapper.addEventListener('touchmove', function (e) { if (isDragging) setPosition(getPercent(e)); });
+                    divider.addEventListener('touchstart', function (e) { isDragging = true; }, { passive: true });
+                    wrapper.addEventListener('touchmove', function (e) { if (isDragging) { if(e.cancelable) e.preventDefault(); setPosition(getPercent(e)); } }, { passive: false });
                     document.addEventListener('touchend', function () { isDragging = false; });
                 })();
         
