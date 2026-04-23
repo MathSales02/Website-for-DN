@@ -937,113 +937,58 @@
 })()
 
 // ==========================================
-// E-Book Section Animation
+// E-Book Section Animation (GSAP pin + scrub)
 // ==========================================
 (function() {
-    const book = document.getElementById('ebook-book');
-    const pages = [
-        document.getElementById('ebook-page-1'),
-        document.getElementById('ebook-page-2'),
-        document.getElementById('ebook-page-3'),
-    ];
-    const bullets = [
-        document.getElementById('ebook-bullet-1'),
-        document.getElementById('ebook-bullet-2'),
-        document.getElementById('ebook-bullet-3'),
-    ];
-    const cta = document.getElementById('ebook-cta');
-    const driver = document.getElementById('ebook-scroll-driver');
+    const scene = document.getElementById('ebook-scene');
+    if (!scene) return;
 
-    if (!book || !driver) return;
+    const book    = document.getElementById('ebook-book');
+    const bar     = document.getElementById('ebook-progress-bar');
+    const slides  = ['ebook-slide-0','ebook-slide-1','ebook-slide-2','ebook-slide-3','ebook-slide-cta']
+                        .map(id => document.getElementById(id));
 
-    // Make all pages visible but rotated out of sight initially
-    pages.forEach(page => {
-        if (!page) return;
-        page.style.display = 'block';
-        page.style.transformOrigin = 'left center';
-        page.style.transform = 'rotateY(0deg)';
-        page.style.position = 'absolute';
-        page.style.inset = '0';
-        // Start all pages hidden behind the cover (0deg = same as cover)
-    });
+    if (slides.some(s => !s)) return;
 
-    // 1. Entry animation for the book
-    gsap.from(book, {
-        y: 60,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'power3.out',
+    // Gentle float on the book (runs always)
+    if (book) {
+        gsap.to(book, { y: -14, duration: 2.8, ease: 'sine.inOut', repeat: -1, yoyo: true });
+    }
+
+    // Build the scrubbed timeline
+    const tl = gsap.timeline({
         scrollTrigger: {
-            trigger: driver,
-            start: 'top 85%',
-            once: true,
+            trigger: scene,
+            start: 'top top',
+            end: '+=280%',        // 2.8 screen-heights of scroll
+            pin: true,
+            scrub: 1.2,
+            anticipatePin: 1,
         }
     });
 
-    // 2. Gentle float loop
-    gsap.to(book, {
-        y: -14,
-        duration: 2.6,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-    });
+    // Helper: cross-fade from one slide to next + tilt book
+    function crossFade(fromIdx, toIdx, bookRotateY) {
+        tl.to(slides[fromIdx], { opacity: 0, y: -28, duration: 0.6, ease: 'power2.in' })
+          .fromTo(slides[toIdx],
+                { opacity: 0, y: 32 },
+                { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, '<0.2');
 
-    // 3. Scroll-driven page flip
-    function updateEbook() {
-        const driverRect = driver.getBoundingClientRect();
-        const totalScrollable = driver.offsetHeight - window.innerHeight;
-        const scrolled = -driverRect.top;
-        const progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
-
-        // Steps: page 1 at 0.1-0.35, page 2 at 0.35-0.6, page 3 at 0.6-0.85, CTA at 0.85+
-        const steps = [
-            { start: 0.10, end: 0.35, pageIdx: 0 },
-            { start: 0.35, end: 0.60, pageIdx: 1 },
-            { start: 0.60, end: 0.85, pageIdx: 2 },
-        ];
-
-        steps.forEach(({ start, end, pageIdx }) => {
-            const page = pages[pageIdx];
-            const bullet = bullets[pageIdx];
-            if (!page) return;
-
-            let angle = 0;
-            if (progress < start) {
-                // Not yet visible — hide behind cover
-                angle = 0;
-                page.style.zIndex = String(pageIdx);
-            } else if (progress >= end) {
-                // Fully turned
-                angle = -180;
-                page.style.zIndex = String(10 + pageIdx);
-                if (bullet) { bullet.style.opacity = '1'; bullet.style.transform = 'translateX(0)'; }
-            } else {
-                // Turning
-                const local = (progress - start) / (end - start);
-                angle = -180 * local;
-                page.style.zIndex = String(10 + pageIdx);
-                if (bullet && local > 0.5) { bullet.style.opacity = '1'; bullet.style.transform = 'translateX(0)'; }
-            }
-            page.style.transform = 'rotateY(' + angle + 'deg)';
-        });
-
-        if (cta) {
-            if (progress >= 0.88) {
-                cta.style.opacity = '1';
-                cta.style.transform = 'translateY(0)';
-            } else {
-                cta.style.opacity = '0';
-                cta.style.transform = 'translateY(16px)';
-            }
+        if (book) {
+            tl.to(book, { rotateY: bookRotateY, duration: 0.6, ease: 'power2.inOut' }, '<');
         }
+        if (bar) {
+            const pct = (toIdx / (slides.length - 1)) * 100;
+            tl.to(bar, { width: pct + '%', duration: 0.6, ease: 'power2.inOut' }, '<');
+        }
+        // Pause between slides
+        tl.to({}, { duration: 0.8 });
     }
 
-    // RAF loop — works regardless of Lenis or native scroll
-    function rafLoop() {
-        updateEbook();
-        requestAnimationFrame(rafLoop);
-    }
-    requestAnimationFrame(rafLoop);
+    // Intro → Ch01 → Ch02 → Ch03 → CTA
+    crossFade(0, 1, -28);
+    crossFade(1, 2, -34);
+    crossFade(2, 3, -40);
+    crossFade(3, 4, -20);
 
 })();
