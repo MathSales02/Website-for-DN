@@ -981,3 +981,19 @@
         });
     }
 })();
+
+// ==========================================
+// Sticky Navbar Scroll Effect
+// ==========================================
+(function() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            header.classList.add('scrolled-nav');
+        } else {
+            header.classList.remove('scrolled-nav');
+        }
+    });
+})();
