@@ -5,45 +5,34 @@ import { useEffect } from "react";
 export default function LanguageAutoTranslator() {
   useEffect(() => {
     try {
-      // Evita rodar no servidor
       if (typeof window === "undefined") return;
 
-      // Detecta a linguagem do navegador (ex: "en-US" -> "en")
-      const navLang = navigator.language || (navigator as any).userLanguage;
-      const langCode = navLang ? navLang.split('-')[0].toLowerCase() : 'pt';
-      
-      // Idiomas alvo que a ferramenta suportará ativamente na lógica (além do padrão do google)
-      const supportedLangs = ['en', 'es', 'fr', 'pt'];
-      const targetLang = supportedLangs.includes(langCode) ? langCode : 'en';
-
-      // Se for pt (idioma nativo do site), não precisamos traduzir.
-      if (targetLang === 'pt') return;
-
-      // Define o cookie do Google Translate para forçar a tradução ANTES do script carregar
-      // Formato: /idiomaOriginal/idiomaDestino
-      const cookieValue = `/pt/${targetLang}`;
-      const currentCookie = document.cookie.split('; ').find(row => row.startsWith('googtrans='));
-      
-      // Apenas define o cookie se não existir ou se não for a do idioma detectado 
-      // (Isso permite que o usuário mude manualmente depois sem a gente forçar de volta)
-      if (!currentCookie) {
-        document.cookie = `googtrans=${cookieValue}; path=/`;
-        document.cookie = `googtrans=${cookieValue}; domain=.${location.hostname}; path=/`;
+      // Se o usuário não selecionou manualmente um idioma nesta sessão, force para português (removendo cookies do Google Translate)
+      if (!sessionStorage.getItem("langSelected")) {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
       }
 
-      // Prepara a inicialização do script do Google
+      // Lê o cookie atual do Google Translate
+      const cookieNow = document.cookie.split("; ").find((row) => row.startsWith("googtrans="));
+      
+      // Se não tem cookie, ou o cookie for de PT (idioma nativo), não faz nada (não carrega o tradutor)
+      if (!cookieNow || cookieNow === "googtrans=" || cookieNow.includes("/pt/pt")) {
+        return;
+      }
+
+      // Carrega o script na página
       (window as any).googleTranslateElementInit = () => {
         new (window as any).google.translate.TranslateElement(
-          { 
-            pageLanguage: 'pt', 
-            includedLanguages: 'en,es,fr,pt', 
-            autoDisplay: false 
+          {
+            pageLanguage: "pt",
+            includedLanguages: "en,es,fr,pt",
+            autoDisplay: false,
           },
-          'google_translate_element'
+          "google_translate_element"
         );
       };
 
-      // Carrega o script na página
       if (!document.getElementById("google-translate-script")) {
         const script = document.createElement("script");
         script.id = "google-translate-script";
@@ -56,6 +45,34 @@ export default function LanguageAutoTranslator() {
     }
   }, []);
 
-  // O container precisa existir no DOM, mas manteremos ele oculto para não quebrar o layout premium
-  return <div id="google_translate_element" className="hidden" />;
+  // Injeta estilos globais para esconder completamente a UI padrão do Google Translate
+  return (
+    <>
+      <div id="google_translate_element" style={{ display: "none" }} />
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          /* Esconde o iframe do topo (banner do Google) */
+          .goog-te-banner-frame.skiptranslate, .skiptranslate iframe {
+            display: none !important;
+          }
+          /* Remove o espaço adicionado no topo do body pelo Google */
+          body {
+            top: 0px !important;
+          }
+          /* Esconde o tooltip de tradução original quando passa o mouse */
+          .goog-tooltip {
+            display: none !important;
+          }
+          .goog-tooltip:hover {
+            display: none !important;
+          }
+          .goog-text-highlight {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+          }
+        `
+      }} />
+    </>
+  );
 }
