@@ -5,6 +5,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Chatbot from "@/components/Chatbot/Chatbot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -38,7 +39,6 @@ export const metadata: Metadata = {
   },
 };
 
-import LanguageAutoTranslator from "@/components/LanguageAutoTranslator";
 
 export default function RootLayout({
   children,
@@ -51,13 +51,13 @@ export default function RootLayout({
       className={`${inter.variable} font-sans antialiased`}
     >
       <body className="min-h-screen flex flex-col">
-        <LanguageAutoTranslator />
         <Preloader />
         <SmoothScroll>
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
         </SmoothScroll>
+        <Chatbot />
       </body>
     </html>
   );
