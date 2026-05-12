@@ -109,11 +109,14 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <a href="https://wa.me/558899222054" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
-            <MagneticButton className="mt-8 px-8 py-3 text-lg font-bold bg-[--color-brand-primary] text-white hover:bg-[#3b8780] shadow-[0_0_20px_rgba(47,107,101,0.4)]">
-              Falar com Especialista
-            </MagneticButton>
-          </a>
+          
+          <div className="mt-4 flex flex-col items-center gap-6">
+            <a href="https://wa.me/558899222054" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              <MagneticButton className="px-8 py-3 text-lg font-bold bg-[--color-brand-primary] text-white hover:bg-[#3b8780] shadow-[0_0_20px_rgba(47,107,101,0.4)]">
+                Falar com Especialista
+              </MagneticButton>
+            </a>
+          </div>
         </motion.div>
       )}
     </>

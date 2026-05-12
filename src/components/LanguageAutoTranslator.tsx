@@ -7,16 +7,22 @@ export default function LanguageAutoTranslator() {
     try {
       if (typeof window === "undefined") return;
 
-      // Se o usuário não selecionou manualmente um idioma nesta sessão, force para português (removendo cookies do Google Translate)
-      if (!sessionStorage.getItem("langSelected")) {
-        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.${window.location.hostname}; path=/;`;
+      let cookieNow = document.cookie.split("; ").find((row) => row.startsWith("googtrans="));
+
+      // Se for a primeira visita (sem cookie), detecta o idioma do navegador
+      if (!cookieNow) {
+        const userLang = navigator.language || (navigator as any).userLanguage;
+        if (userLang && !userLang.toLowerCase().startsWith("pt")) {
+          const targetLang = userLang.split('-')[0].toLowerCase();
+          
+          document.cookie = `googtrans=/pt/${targetLang}; path=/`;
+          document.cookie = `googtrans=/pt/${targetLang}; domain=.${window.location.hostname}; path=/`;
+          
+          cookieNow = `googtrans=/pt/${targetLang}`;
+        }
       }
 
-      // Lê o cookie atual do Google Translate
-      const cookieNow = document.cookie.split("; ").find((row) => row.startsWith("googtrans="));
-      
-      // Se não tem cookie, ou o cookie for de PT (idioma nativo), não faz nada (não carrega o tradutor)
+      // Se o idioma for português ou vazio, não precisa carregar o tradutor
       if (!cookieNow || cookieNow === "googtrans=" || cookieNow.includes("/pt/pt")) {
         return;
       }
@@ -26,7 +32,6 @@ export default function LanguageAutoTranslator() {
         new (window as any).google.translate.TranslateElement(
           {
             pageLanguage: "pt",
-            includedLanguages: "en,es,fr,pt",
             autoDisplay: false,
           },
           "google_translate_element"
