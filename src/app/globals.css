@@ -51,3 +51,17 @@ body {
   animation-play-state: paused;
 }
 
+/* Oculta a barra superior do Google Translate */
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* Oculta o tooltip ao passar o mouse */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}

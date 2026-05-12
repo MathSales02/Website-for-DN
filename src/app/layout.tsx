@@ -38,6 +38,8 @@ export const metadata: Metadata = {
   },
 };
 
+import LanguageAutoTranslator from "@/components/LanguageAutoTranslator";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,6 +51,7 @@ export default function RootLayout({
       className={`${inter.variable} font-sans antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+        <LanguageAutoTranslator />
         <Preloader />
         <SmoothScroll>
           <Navbar />
