@@ -57,7 +57,7 @@ export default function ServicesSection() {
   // Parallax para o header
   const headerY = useTransform(scrollYProgress, [0, 0.5], [80, 0]);
 
-  const containerVariants = {
+  const containerVariants: import("framer-motion").Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -66,7 +66,7 @@ export default function ServicesSection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: import("framer-motion").Variants = {
     hidden: { opacity: 0, y: 80, rotateX: 15, scale: 0.95 },
     visible: { 
       opacity: 1, 
