@@ -66,8 +66,8 @@ export default function ProcessSection() {
       {/* Background Cinematic Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[--color-brand-primary] rounded-full blur-[250px] opacity-[0.1] pointer-events-none z-0" />
 
-      <div className="h-screen flex items-center pt-24 relative z-10">
-        <div ref={scrollRef} className="flex h-full items-center px-10 md:px-20 gap-16 lg:gap-32 w-max">
+      <div className="h-screen flex items-center pt-16 md:pt-24 relative z-10">
+        <div ref={scrollRef} className="flex h-full items-center px-5 md:px-20 gap-8 md:gap-16 lg:gap-32 w-max">
           
           {/* Title Section as the first item in the horizontal scroll */}
           <div className="w-[85vw] md:w-[600px] flex-shrink-0">

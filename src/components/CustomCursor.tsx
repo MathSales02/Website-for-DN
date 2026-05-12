@@ -1,13 +1,22 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
   const [isHovering, setIsHovering] = useState(false);
+  // Ref não causa re-render — usamos ela para checar se deve montar
+  const isTouchDevice = useRef(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    isTouchDevice.current = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+    if (isTouchDevice.current) return;
+
+    setMounted(true);
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -34,6 +43,8 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", handleMouseOver);
     };
   }, []);
+
+  if (!mounted) return null;
 
   return (
     <>
@@ -69,3 +80,4 @@ export default function CustomCursor() {
     </>
   );
 }
+

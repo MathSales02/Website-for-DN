@@ -17,7 +17,7 @@ export default function CTASection() {
   const scaleContent = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.9]);
 
   return (
-    <section ref={containerRef} className="relative bg-[--color-brand-dark] py-40 px-6 overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} className="relative bg-[--color-brand-dark] py-20 md:py-40 px-4 md:px-6 overflow-hidden flex items-center justify-center">
       {/* Dynamic Background */}
         <div className="absolute inset-0 z-0">
         <DynamicGridBackground />
@@ -37,17 +37,17 @@ export default function CTASection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="bg-white/5 border border-white/10 rounded-[3rem] p-12 md:p-24 backdrop-blur-md shadow-2xl relative overflow-hidden"
+          className="bg-white/5 border border-white/10 rounded-[2rem] md:rounded-[3rem] p-7 sm:p-12 md:p-24 backdrop-blur-md shadow-2xl relative overflow-hidden"
         >
           {/* Inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-[--color-brand-primary]/20 to-transparent opacity-50 pointer-events-none" />
 
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6 md:mb-8 leading-tight">
               Pronto para Escalar o seu <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[--color-brand-primary]">Faturamento?</span>
             </h2>
-            <p className="text-xl text-white/70 max-w-2xl mx-auto mb-12 font-medium">
+            <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-8 md:mb-12 font-medium">
               Pare de perder dinheiro com estratégias que não convertem. Agende uma consultoria gratuita e descubra o potencial oculto do seu negócio.
             </p>
 

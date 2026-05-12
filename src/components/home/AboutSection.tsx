@@ -48,20 +48,20 @@ export default function AboutSection() {
     if (!containerRef.current) return;
 
     // Simple vertical fade up for all devices
-    const panels = gsap.utils.toArray(".about-panel");
-    panels.forEach((panel: any) => {
-      gsap.fromTo(panel, 
-        { opacity: 0, y: 50 }, 
-        { 
-          opacity: 1, 
-          y: 0, 
-          duration: 1, 
+    const panels = gsap.utils.toArray<Element>(".about-panel");
+    panels.forEach((panel) => {
+      gsap.fromTo(panel,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: panel,
+            trigger: panel as HTMLElement,
             start: "top 80%",
             toggleActions: "play none none reverse"
-          } 
+          }
         }
       );
     });
@@ -79,7 +79,7 @@ export default function AboutSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-[--color-brand-primary] rounded-full blur-[250px] opacity-[0.05] z-0 pointer-events-none" />
 
       {/* Vertical Scroll Wrapper */}
-      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-6 md:px-12 gap-16 md:gap-32">
+      <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-4 md:px-12 gap-12 md:gap-32">
         {/* Header Title */}
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-bold text-white tracking-widest uppercase mb-4 opacity-80">

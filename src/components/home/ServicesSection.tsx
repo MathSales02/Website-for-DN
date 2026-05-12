@@ -110,7 +110,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section ref={sectionRef} id="servicos" className="relative bg-[--color-brand-dark] py-40 px-6 overflow-hidden perspective-[1000px]">
+    <section ref={sectionRef} id="servicos" className="relative bg-[--color-brand-dark] py-20 md:py-40 px-4 md:px-6 overflow-hidden perspective-[1000px]">
       
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
@@ -135,7 +135,7 @@ export default function ServicesSection() {
       <div className="relative max-w-7xl mx-auto z-10">
         <motion.div 
           style={{ y: headerY }}
-          className="mb-20 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-white/10 pb-10"
+          className="mb-10 md:mb-20 flex flex-col md:flex-row justify-between items-end gap-4 md:gap-6 border-b border-white/10 pb-8 md:pb-10"
         >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tighter">
@@ -155,7 +155,7 @@ export default function ServicesSection() {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">
-              <SpotlightCard className="h-full p-10 flex flex-col justify-between min-h-[340px] group transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
+              <SpotlightCard className="h-full p-6 md:p-10 flex flex-col justify-between min-h-[260px] md:min-h-[340px] group transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
                 <div className="relative z-10">
                   <div className={`mb-8 w-16 h-16 rounded-2xl flex items-center justify-center bg-gradient-to-br ${service.color} border border-white/10 group-hover:scale-110 group-hover:border-[--color-brand-primary]/50 transition-all duration-500`}>
                     {service.icon}

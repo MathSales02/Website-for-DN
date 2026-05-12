@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type HTMLMotionProps } from "framer-motion";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -9,10 +9,10 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-interface MagneticButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+type MagneticButtonProps = Omit<HTMLMotionProps<"button">, "ref"> & {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 export default function MagneticButton({ children, className, ...props }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
@@ -44,7 +44,7 @@ export default function MagneticButton({ children, className, ...props }: Magnet
         "border border-transparent",
         className
       )}
-      {...(props as any)}
+      {...props}
     >
       <span className="relative z-10">{children}</span>
     </motion.button>

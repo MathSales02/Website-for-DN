@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React from "react";
 import { Button } from "@/components/ui/button";
 
 function FloatingPaths({ position }: { position: number }) {
-    const paths = Array.from({ length: 36 }, (_, i) => ({
+    const [paths] = React.useState(() => Array.from({ length: 36 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
             380 - i * 5 * position
@@ -15,7 +16,8 @@ function FloatingPaths({ position }: { position: number }) {
         } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
         color: `rgba(255,255,255,${0.05 + i * 0.02})`, // Adjusted color for dark bg
         width: 0.5 + i * 0.03,
-    }));
+        duration: 20 + Math.random() * 10,
+    })));
 
     return (
         <div className="absolute inset-0 pointer-events-none">
@@ -39,7 +41,7 @@ function FloatingPaths({ position }: { position: number }) {
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 20 + Math.random() * 10,
+                            duration: path.duration,
                             repeat: Number.POSITIVE_INFINITY,
                             ease: "linear",
                         }}

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
-import Navbar from "@/components/Navbar";
+import { Header } from "@/components/ui/header-2";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot/Chatbot";
 
@@ -48,12 +48,12 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} font-sans antialiased`}
+      className={`dark ${inter.variable} font-sans antialiased`}
     >
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col overflow-x-hidden">
         <Preloader />
         <SmoothScroll>
-          <Navbar />
+          <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
         </SmoothScroll>

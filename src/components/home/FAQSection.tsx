@@ -35,7 +35,7 @@ export default function FAQSection() {
   const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative bg-[--color-brand-darker] py-32 px-6 overflow-hidden">
+    <section ref={containerRef} className="relative bg-[--color-brand-darker] py-16 md:py-32 px-4 md:px-6 overflow-hidden">
       {/* Background Glow */}
       <motion.div 
         style={{ y: yBackground }}
@@ -80,9 +80,9 @@ export default function FAQSection() {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between p-4 md:p-6 text-left"
                 >
-                  <span className={`text-xl font-medium transition-colors duration-300 ${isOpen ? "text-white" : "text-white/80"}`}>
+                  <span className={`text-base md:text-xl font-medium transition-colors duration-300 ${isOpen ? "text-white" : "text-white/80"}`}>
                     {faq.question}
                   </span>
                   <div className={`shrink-0 ml-4 p-2 rounded-full transition-colors duration-300 ${isOpen ? "bg-[--color-brand-primary]/20 text-[--color-brand-primary]" : "bg-white/5 text-white/50"}`}>

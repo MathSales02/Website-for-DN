@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
@@ -10,7 +10,7 @@ function ParticleSphere() {
   const count = 1000;
   
   // Create a sphere of particles
-  const positions = useMemo(() => {
+  const [positions] = React.useState(() => {
     const p = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       const theta = Math.random() * Math.PI * 2;
@@ -22,7 +22,7 @@ function ParticleSphere() {
       p[i * 3 + 2] = r * Math.cos(phi);
     }
     return p;
-  }, [count]);
+  });
 
   useFrame((state, delta) => {
     if (ref.current) {

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 import { Check, X } from "lucide-react";
 import MagneticButton from "@/components/ui/MagneticButton";
 
@@ -23,17 +23,17 @@ export default function PricingSection() {
     },
   };
 
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 1, ease: "easeOut" } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" as const },
     },
   };
 
   return (
-    <section ref={containerRef} className="relative bg-[--color-brand-darker] py-32 px-6 overflow-hidden">
+    <section ref={containerRef} className="relative bg-[--color-brand-darker] py-16 md:py-32 px-4 md:px-6 overflow-hidden">
       {/* Cinematic Background Glows */}
       <motion.div 
         style={{ y: yBackground }}
@@ -56,7 +56,7 @@ export default function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter mb-6 drop-shadow-2xl"
+            className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white tracking-tighter mb-6 drop-shadow-2xl"
           >
             Sua Empresa Merece <span className="text-[--color-brand-primary] drop-shadow-[0_0_15px_rgba(47,107,101,0.8)]">Mais</span>
           </motion.h2>
@@ -109,7 +109,7 @@ export default function PricingSection() {
           {/* Card: Agência DN */}
           <motion.div 
             variants={itemVariants}
-            className="bg-[--color-brand-dark] rounded-3xl p-8 md:p-12 border border-[--color-brand-primary]/30 shadow-[0_0_50px_rgba(47,107,101,0.2)] relative z-10 transform md:-translate-x-4 md:-translate-y-4 hover:shadow-[0_0_80px_rgba(47,107,101,0.3)] hover:-translate-y-6 transition-all duration-500"
+            className="bg-[--color-brand-dark] rounded-3xl p-6 md:p-12 border border-[--color-brand-primary]/30 shadow-[0_0_50px_rgba(47,107,101,0.2)] relative z-10 md:-translate-x-4 md:-translate-y-4 hover:shadow-[0_0_80px_rgba(47,107,101,0.3)] hover:-translate-y-2 md:hover:-translate-y-6 transition-all duration-500"
           >
             <div className="absolute top-0 right-8 transform -translate-y-1/2">
               <div className="relative">

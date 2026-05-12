@@ -10,6 +10,7 @@ export default function Preloader() {
   const isFirstLoad = useRef(true);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsLoading(true);
     window.scrollTo(0, 0);
 

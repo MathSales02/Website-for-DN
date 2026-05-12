@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import { Quote, Star } from "lucide-react";
 
 const testimonials = [
@@ -43,7 +43,7 @@ export default function TestimonialsSection() {
     },
   };
 
-  const itemVariants: any = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
               </div>
               
               <p className="text-white/80 text-lg mb-8 leading-relaxed font-medium">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
               
               <div className="flex items-center gap-4 mt-auto">
